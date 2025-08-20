@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { cn } from "./util/cn";
+import { cn } from "../util/cn";
 const Loading = memo(function Loading({
   variant = "spinner",
   size = "md",

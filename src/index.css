@@ -1,16 +1,47 @@
 @import "tailwindcss";
 @plugin "daisyui";
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@theme {
+  --color-main-bg: #ffffff;
+  --color-second-bg: oklch(98% 0 0);
+  --color-logo: #242c3f;
+  --color-title: #000000;
+  --color-input-border: #aeaeae;
+  --color-header-border: #c7c7c7;
+  --color-main-text: #3a3a3a;
+  --color-light-text: #888888;
+  --color-lighter-text: #a5a9bf;
+  --color-lightest-text: #b7b7b7;
+  --color-main-text-light: #3e3e3e;
+  --color-blue-first: #387aff;
+  --color-blue-second: #033fb8;
+  --color-chart-column: #00a34c;
+  --color-table-row: #f1f5ff;
+  --color-table-hover: #b6ceff;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+:root {
+  --color-main-bg: #ffffff;
+  --color-second-bg: oklch(98% 0 0);
+  --color-blue-first: #387aff;
+  --color-blue-second: #033fb8;
+  --color-chart-column: #00a34c;
+  --color-logo: #242c3f;
+  --color-title: #000000;
+  --color-main-text: #3a3a3a;
+  --color-table-row: #f1f5ff;
+  --color-table-hover: #b6ceff;
+}
+
+.dark {
+  --color-main-bg: #16161d;
+  --color-second-bg: #21212b;
+  --color-blue-first: #374dbc;
+  --color-blue-second: #0c224d;
+  --color-chart-column: #06592d;
+  --color-logo: #4a4f5b;
+  --color-title: #ffffff;
+  --color-main-text: #a0a0a0;
+  --color-table-row: #1d1d25;
+  --color-table-hover: #393949;
+}
