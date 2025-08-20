@@ -11,7 +11,7 @@ const changeState = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
   const initialState = {
-    user: { role: "student" },
+    user: { role: "student", displayName: "Anvar A." },
   };
 
   const [state, dispatch] = useReducer(changeState, initialState);

@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap");
+
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
 @theme {
   --color-main-bg: #ffffff;
   --color-second-bg: oklch(98% 0 0);
@@ -18,6 +26,7 @@
   --color-chart-column: #00a34c;
   --color-table-row: #f1f5ff;
   --color-table-hover: #b6ceff;
+  --color-black-gray: #505050;
 }
 
 :root {
@@ -31,6 +40,7 @@
   --color-main-text: #3a3a3a;
   --color-table-row: #f1f5ff;
   --color-table-hover: #b6ceff;
+  --color-black-gray: #505050;
 }
 
 .dark {
@@ -44,4 +54,5 @@
   --color-main-text: #a0a0a0;
   --color-table-row: #1d1d25;
   --color-table-hover: #393949;
+  --color-black-gray: #a1a1a1;
 }
