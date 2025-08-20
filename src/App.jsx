@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 
 import ProtectedRoutes from "./protect/ProtectedRoutes";
 import TeacherLayouts from "./layouts/TeacherLayouts";
@@ -134,6 +138,10 @@ function App() {
     {
       path: "register",
       element: <SignUp />,
+    },
+    {
+      path: "/",
+      element: <Navigate to="/login" replace />,
     },
     {
       path: "*",

@@ -35,7 +35,7 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
               <input
                 type="search"
                 placeholder="Qidirsh..."
-                className="placeholder:text-light-text"
+                className="placeholder:text-light-text text-title"
               />
               <CgSearch className="text-black-gray w-5 h-5" />
             </label>
