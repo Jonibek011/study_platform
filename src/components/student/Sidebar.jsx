@@ -29,7 +29,7 @@ const Sidebar = memo(function Sidebar({ className = "", ...rest }) {
       className={cn("w-80 h-full bg-main-bg px-5 py-6", className)}
       {...rest}
     >
-      <div className="nav flex flex-col gap-5 h-[70%] border-b border-b-gray-200">
+      <div className="nav flex flex-col gap-5 h-[70%] border-b border-b-header-border">
         <CustomLink to="/student" end>
           <span>
             <LiaGraduationCapSolid className="w-6 h-6" />

@@ -26,16 +26,13 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
             <span className="text-2xl text-title font-bold">LOGO</span>
           </div>
         </div>
-        <div className="navbar-middle  flex-1">
-          <Form
-            method="post"
-            className=" max-w-lg lg:w-[70%] xl:w-full mx-auto"
-          >
-            <label className="input w-full bg-second-bg rounded-lg ">
+        <div className="navbar-middle   flex-1">
+          <Form method="post" className=" max-w-lg  min-w-full mx-auto ">
+            <label className="input input-lg w-full bg-second-bg rounded-lg   ">
               <input
                 type="search"
                 placeholder="Qidirsh..."
-                className="placeholder:text-light-text text-title"
+                className="placeholder:text-light-text text-title "
               />
               <CgSearch className="text-black-gray w-5 h-5" />
             </label>

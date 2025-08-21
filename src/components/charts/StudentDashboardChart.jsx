@@ -36,11 +36,11 @@ const data = [
 function StudentDashboardChart() {
   const isDark = useContextSelector(DarkModeContext, (ctx) => ctx.isDark);
   return (
-    <div className="w-full h-full overflow-x-auto md:overflow-x-hidden pb-28  rounded-xl shadow  bg-main-bg">
+    <div className="w-full h-full overflow-x-auto overflow-y-hidden md:overflow-x-visible   rounded-xl shadow  bg-main-bg">
       <h2 className="text-lg font-medium mb-4 bg-table-hover p-4 text-title ">
         So‘ngi oydagi faollik
       </h2>
-      <div className="w-full h-full min-h-[30vh] min-w-[600px] md:min-w-auto pe-5 bg-main-bg">
+      <div className="w-full h-[80%] min-h-[30vh] min-w-[600px] md:min-w-auto pe-5 bg-main-bg">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} />
