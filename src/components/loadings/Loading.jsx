@@ -19,7 +19,7 @@ const Loading = memo(function Loading({
   return (
     <div
       className={cn(
-        "w-full h-full flex justify-center items-center",
+        "w-full h-full flex justify-center items-center ",
         containerClass
       )}
       {...rest}

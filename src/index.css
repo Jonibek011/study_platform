@@ -27,6 +27,7 @@
   --color-table-row: #f1f5ff;
   --color-table-hover: #b6ceff;
   --color-black-gray: #505050;
+  --color-nav-text: #242c3f;
 }
 
 :root {
@@ -41,6 +42,7 @@
   --color-table-row: #f1f5ff;
   --color-table-hover: #b6ceff;
   --color-black-gray: #505050;
+  --color-nav-text: #242c3f;
 }
 
 .dark {
@@ -55,4 +57,9 @@
   --color-table-row: #1d1d25;
   --color-table-hover: #393949;
   --color-black-gray: #a1a1a1;
+  --color-nav-text: #a0a0a0;
+}
+
+.active {
+  background-color: #3b82f6;
 }

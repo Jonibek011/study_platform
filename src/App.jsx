@@ -51,7 +51,7 @@ function App() {
             {
               path: "darslar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <DarslarStudent />
                 </Suspense>
               ),
@@ -59,7 +59,7 @@ function App() {
             {
               path: "testlar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <TestlarStudent />
                 </Suspense>
               ),
@@ -67,7 +67,7 @@ function App() {
             {
               path: "vazifalar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <VazifalarStudent />
                 </Suspense>
               ),
@@ -75,7 +75,7 @@ function App() {
             {
               path: "chatlar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <ChatlarStudent />
                 </Suspense>
               ),
@@ -98,7 +98,7 @@ function App() {
             {
               path: "darslar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <DarsYaratish />
                 </Suspense>
               ),
@@ -106,7 +106,7 @@ function App() {
             {
               path: "testlar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <TestYaratish />
                 </Suspense>
               ),
@@ -114,7 +114,7 @@ function App() {
             {
               path: "chatlar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <ChatlarTeacher />
                 </Suspense>
               ),
@@ -122,7 +122,7 @@ function App() {
             {
               path: "vazifalar",
               element: (
-                <Suspense fallback={<Loading size="lg" />}>
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <VazifaYaratish />
                 </Suspense>
               ),
