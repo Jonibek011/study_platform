@@ -5,13 +5,15 @@ import App from "./App.jsx";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import { StudentContextProvider } from "./context/StudentContext.jsx";
 import { TeacherContextProvider } from "./context/TeacherContext.jsx";
-
+import { DarkModeContextProvider } from "./context/DarkModeContext.jsx";
 createRoot(document.getElementById("root")).render(
-  <AuthContextProvider>
-    <StudentContextProvider>
-      <TeacherContextProvider>
-        <App />
-      </TeacherContextProvider>
-    </StudentContextProvider>
-  </AuthContextProvider>
+  <DarkModeContextProvider>
+    <AuthContextProvider>
+      <StudentContextProvider>
+        <TeacherContextProvider>
+          <App />
+        </TeacherContextProvider>
+      </StudentContextProvider>
+    </AuthContextProvider>
+  </DarkModeContextProvider>
 );

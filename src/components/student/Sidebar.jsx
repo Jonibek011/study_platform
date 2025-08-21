@@ -1,6 +1,9 @@
 import React, { memo, useEffect, useState } from "react";
 import { cn } from "../util/cn";
 
+//context
+import { DarkModeContext } from "../../context/DarkModeContext";
+import { useContextSelector } from "use-context-selector";
 //react-icons
 import { LiaGraduationCapSolid } from "react-icons/lia";
 import { BsClipboardCheck } from "react-icons/bs";
@@ -14,25 +17,13 @@ import CustomLink from "../ui/CustomLink";
 import { Link } from "react-router-dom";
 const Sidebar = memo(function Sidebar({ className = "", ...rest }) {
   //toggle dark mode
-  const [isDark, setIsDark] = useState(
-    localStorage.getItem("theme") === "dark"
+
+  const toggleDarkMode = useContextSelector(
+    DarkModeContext,
+    (ctx) => ctx.toggleDarkMode
   );
+  const isDark = useContextSelector(DarkModeContext, (ctx) => ctx.isDark);
 
-  const toggleDarkMode = () => {
-    setIsDark((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
   return (
     <div
       className={cn("w-80 h-full bg-main-bg px-5 py-6", className)}
@@ -85,7 +76,7 @@ const Sidebar = memo(function Sidebar({ className = "", ...rest }) {
               <span>
                 <FiMoon className="w-6 h-6 text-nav-text " />
               </span>
-              <span className="text-nav-text font-normal text-lg">
+              <span className="text-nav-text font-normal text-lg whitespace-nowrap">
                 Tungi rejim
               </span>
             </div>

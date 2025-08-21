@@ -29,7 +29,7 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
         <div className="navbar-middle  flex-1">
           <Form
             method="post"
-            className=" max-w-md lg:w-[70%] xl:w-full mx-auto"
+            className=" max-w-lg lg:w-[70%] xl:w-full mx-auto"
           >
             <label className="input w-full bg-second-bg rounded-lg ">
               <input

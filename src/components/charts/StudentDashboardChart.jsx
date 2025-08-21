@@ -1,4 +1,6 @@
 import React from "react";
+import { DarkModeContext } from "../../context/DarkModeContext";
+import { useContextSelector } from "use-context-selector";
 import {
   BarChart,
   Bar,
@@ -32,25 +34,38 @@ const data = [
 ];
 
 function StudentDashboardChart() {
+  const isDark = useContextSelector(DarkModeContext, (ctx) => ctx.isDark);
   return (
-    <div className="w-full h-80 p-4 rounded-xl shadow bg-white">
-      <h2 className="text-lg font-medium mb-4">So‘ngi oydagi faollik</h2>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
-          <XAxis
-            dataKey="day"
-            label={{ value: "Iyul", position: "insideBottomRight", offset: -5 }}
-          />
-          <YAxis
-            label={{ value: "soat", angle: -90, position: "insideLeft" }}
-            ticks={[1, 2, 3, 4, 5, 6, 7, 8]}
-            domain={[0, 8]}
-          />
-          <Tooltip />
-          <Bar dataKey="hours" fill="#16a34a" radius={[4, 4, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+    <div className="w-full h-full overflow-x-auto md:overflow-x-hidden pb-28  rounded-xl shadow  bg-main-bg">
+      <h2 className="text-lg font-medium mb-4 bg-table-hover p-4 text-title ">
+        So‘ngi oydagi faollik
+      </h2>
+      <div className="w-full h-full min-h-[30vh] min-w-[600px] md:min-w-auto pe-5 bg-main-bg">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} />
+            <XAxis
+              dataKey="day"
+              label={{
+                value: "Iyul",
+                position: "insideBottomLeft",
+                offset: -4,
+              }}
+            />
+            <YAxis
+              label={{ value: "soat", angle: -90, position: "insideLeft" }}
+              ticks={[1, 2, 3, 4, 5, 6, 7, 8]}
+              domain={[0, 8]}
+            />
+            <Tooltip />
+            <Bar
+              dataKey="hours"
+              fill={`${isDark ? "#06592D" : "#16a34a"}`}
+              radius={[4, 4, 0, 0]}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

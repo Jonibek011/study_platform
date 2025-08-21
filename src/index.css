@@ -28,6 +28,7 @@
   --color-table-hover: #b6ceff;
   --color-black-gray: #505050;
   --color-nav-text: #242c3f;
+  --color-table-text: #3e3e3e;
 }
 
 :root {
@@ -43,6 +44,7 @@
   --color-table-hover: #b6ceff;
   --color-black-gray: #505050;
   --color-nav-text: #242c3f;
+  --color-table-text: #3e3e3e;
 }
 
 .dark {
@@ -58,8 +60,18 @@
   --color-table-hover: #393949;
   --color-black-gray: #a1a1a1;
   --color-nav-text: #a0a0a0;
+  --color-table-text: #dedede;
 }
 
 .active {
   background-color: #3b82f6;
+}
+
+/* DaisyUI zebra rangini override qilish */
+.table-zebra tbody tr:nth-child(even) {
+  background-color: #f1f5ff;
+}
+
+.dark .table-zebra tbody tr:nth-child(even) {
+  background-color: #1d1d25;
 }
