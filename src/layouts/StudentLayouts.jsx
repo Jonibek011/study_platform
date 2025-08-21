@@ -1,13 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Sidebar from "../components/student/Sidebar";
 function StudentLayouts() {
   return (
-    <div>
+    <div className="bg-second-bg h-screen">
       <Navbar />
-      <main>
-        <Outlet />
-      </main>
+      <div className="flex">
+        <Sidebar />
+        <main>
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
