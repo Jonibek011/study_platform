@@ -14,7 +14,8 @@ import { DarkModeContext } from "../../context/DarkModeContext";
 import { useContextSelector } from "use-context-selector";
 //components
 import ReytingBoard from "../../components/student/ReytingBoard";
-
+import { Link, Outlet } from "react-router-dom";
+import CustomNavLink from "../../components/ui/CustomNavLink";
 //main function
 const AsosiyStudent = memo(function AsosiyStudent() {
   const { width, height } = useWindowSize();
@@ -26,7 +27,7 @@ const AsosiyStudent = memo(function AsosiyStudent() {
           <h2 className="text-white font-bold text-[25px]">
             Xush kelibsiz, Anvar!
           </h2>
-          <p className="font-normal text-lg text-gray-200">
+          <p className="font-normal  sm:text-lg text-gray-200">
             O`qishni davom ettiring va natijangizni oshiring
           </p>
         </div>
@@ -93,12 +94,38 @@ const AsosiyStudent = memo(function AsosiyStudent() {
             </div>
           </div>
         </div>
-        <div className={`flex ${width < 1380 && "flex-col"} gap-4 xl:gap-8`}>
+        <div
+          className={`hidden lg:flex  ${
+            width < 1380 && "flex-col"
+          } gap-4 xl:gap-8`}
+        >
           <div className="flex-1 pb-5">
             <ReytingBoard />
           </div>
           <div className="flex-1 pb-5 ">
             <StudentDashboardChart />
+          </div>
+        </div>
+
+        <div className="block lg:hidden">
+          <CustomNavLink
+            to="reyting"
+            className="btn  outline-none border-none shadow-none h-12  relative bottom-[-10px] z-0  "
+            active="bg-main-bg text-blue-first"
+            notActive="bg-transparent text-title"
+          >
+            Peshqadamlar
+          </CustomNavLink>
+          <CustomNavLink
+            to="studentChart"
+            className="btn outline-none border-none shadow-none h-12  relative bottom-[-10px] z-0 "
+            active="bg-main-bg text-blue-first"
+            notActive="bg-transparent text-title"
+          >
+            Faollik
+          </CustomNavLink>
+          <div className="w-full h-full">
+            <Outlet />
           </div>
         </div>
       </div>

@@ -4,13 +4,22 @@ import { Form } from "react-router-dom";
 //context
 import { AuthContext } from "../context/AuthContext";
 import { useContextSelector } from "use-context-selector";
+import { DarkModeContext } from "../context/DarkModeContext";
 //reaact-icons
 import { CgSearch } from "react-icons/cg";
 import { PiBellBold } from "react-icons/pi";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { FiMenu } from "react-icons/fi";
+import { FaEllipsisVertical } from "react-icons/fa6";
+//images
+import navImg from "../assets/student/asosiy/nav-img.png";
 //main fuunction
 const Navbar = memo(function Navbar({ className = "", ...rest }) {
   const user = useContextSelector(AuthContext, (ctx) => ctx.user);
+  const mobileMenu = useContextSelector(
+    DarkModeContext,
+    (ctx) => ctx.mobileMenu
+  );
   return (
     <header
       {...rest}
@@ -19,7 +28,7 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
         className
       )}
     >
-      <nav className="w-full h-full flex items-center justify-between px-10 xl:px-[100px]">
+      <nav className="w-full h-full hidden  md:flex items-center justify-between px-10 xl:px-[100px]">
         <div className="navbar-start flex-1 ">
           <div className="logo flex items-center gap-1">
             <span className="w-10 h-10 rounded-[14px] bg-logo inline-block"></span>
@@ -101,6 +110,30 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
               </li>
             </ul>
           </div>
+        </div>
+      </nav>
+
+      <nav className="w-full h-full flex md:hidden items-center justify-between px-5">
+        <div className="nav-start  flex items-center ">
+          <button onClick={mobileMenu}>
+            <span>
+              <FiMenu className="w-9 h-9 text-[#737984]" />
+            </span>
+          </button>
+        </div>
+
+        <div className="nav-middle">
+          <div>
+            <img src={navImg} alt="" className="w-[58px] " />
+          </div>
+        </div>
+
+        <div className="nav-end flex items-center">
+          <button>
+            <span>
+              <FaEllipsisVertical className="w-7 h-7 text-[#737984]" />
+            </span>
+          </button>
         </div>
       </nav>
     </header>

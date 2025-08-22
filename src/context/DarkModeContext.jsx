@@ -4,6 +4,7 @@ import { createContext } from "use-context-selector";
 export const DarkModeContext = createContext();
 
 export const DarkModeContextProvider = ({ children }) => {
+  const [isToggle, setToggle] = useState(false);
   const [isDark, setIsDark] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -24,8 +25,13 @@ export const DarkModeContextProvider = ({ children }) => {
     }
   }, [isDark]);
 
+  const mobileMenu = () => {
+    setToggle((prev) => !prev);
+  };
   return (
-    <DarkModeContext.Provider value={{ toggleDarkMode, isDark }}>
+    <DarkModeContext.Provider
+      value={{ toggleDarkMode, isDark, mobileMenu, isToggle }}
+    >
       {children}
     </DarkModeContext.Provider>
   );

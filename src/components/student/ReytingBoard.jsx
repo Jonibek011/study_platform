@@ -76,8 +76,8 @@ const leaders = [
 
 const ReytingBoard = memo(function ReytingBoard() {
   return (
-    <div className="bg-main-bg rounded-xl ">
-      <div className="">
+    <div className="bg-main-bg rounded-xl relative z-10  overflow-x-auto">
+      <div className="min-w-[640px]">
         <div className="table-title p-5 flex flex-col gap-3 ">
           <h2 className="text-title font-bold text-2xl">
             Peshqadamlar jadvali
@@ -86,8 +86,8 @@ const ReytingBoard = memo(function ReytingBoard() {
             5 kunlik seriya! Maxsus nishonga ega bo'lish uchun davom eting!
           </p>
         </div>
-        <div className="overflow-x-auto">
-          <table className="table table-zebra min-w-[640px]">
+        <div className="">
+          <table className="table table-zebra ">
             {/* head */}
             <thead>
               <tr className="text-title">

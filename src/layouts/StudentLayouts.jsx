@@ -7,7 +7,7 @@ function StudentLayouts() {
     <div className="bg-second-bg h-screen w-full">
       <Navbar />
       <div className="flex w-full h-[calc(100vh-90px)]">
-        <Sidebar className="hidden lg:block" />
+        <Sidebar className="z-50" />
         <main className="w-full h-full overflow-y-hidden px-5 xl:px-8 py-3 xl:pe-10 2xl:pe-[90px]  scroller">
           <Outlet />
         </main>

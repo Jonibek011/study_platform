@@ -11,6 +11,8 @@ import { Dashboard } from "./pages/teachers";
 import { AsosiyStudent } from "./pages/students";
 //loading component
 import Loading from "./components/loadings/Loading";
+import StudentDashboardChart from "./components/charts/StudentDashboardChart";
+import ReytingBoard from "./components/student/ReytingBoard";
 //import react lazy
 import { lazy, Suspense } from "react";
 //lazy load for student
@@ -45,8 +47,18 @@ function App() {
           element: <StudentLayouts />,
           children: [
             {
-              index: true,
+              path: "",
               element: <AsosiyStudent />,
+              children: [
+                {
+                  path: "reyting",
+                  element: <ReytingBoard />,
+                },
+                {
+                  path: "studentChart",
+                  element: <StudentDashboardChart />,
+                },
+              ],
             },
             {
               path: "darslar",
