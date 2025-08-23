@@ -17,6 +17,7 @@ import { IoMdSettings } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 //images
 import navImg from "../assets/student/asosiy/nav-img.png";
+import navImgLight from "../assets/student/asosiy/image 22.png";
 //main fuunction
 const Navbar = memo(function Navbar({ className = "", ...rest }) {
   const user = useContextSelector(AuthContext, (ctx) => ctx.user);
@@ -24,6 +25,7 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
     DarkModeContext,
     (ctx) => ctx.mobileMenu
   );
+  const isDark = useContextSelector(DarkModeContext, (ctx) => ctx.isDark);
   return (
     <header
       {...rest}
@@ -150,16 +152,63 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
 
         <div className="nav-middle">
           <div>
-            <img src={navImg} alt="" className="w-[58px] " />
+            <img
+              src={isDark ? navImg : navImgLight}
+              alt=""
+              className="w-[58px] "
+            />
           </div>
         </div>
 
         <div className="nav-end flex items-center">
-          <button>
-            <span>
-              <FaEllipsisVertical className="w-7 h-7 text-[#737984]" />
-            </span>
-          </button>
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className=" ">
+              <button>
+                <span>
+                  <FaEllipsisVertical className="w-7 h-7 text-[#737984]" />
+                </span>
+              </button>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu  dropdown-content bg-main-bg text-light-text rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <Link className="text-[20px]">
+                  <span>
+                    <TbCalendarDue />
+                  </span>
+                  Voqealar
+                </Link>
+              </li>
+              <li>
+                <Link className="text-[20px]">
+                  {" "}
+                  <span>
+                    <BsCollectionPlay />
+                  </span>{" "}
+                  Obunalar
+                </Link>
+              </li>
+              <li>
+                <Link className="text-[20px]">
+                  <span>
+                    {" "}
+                    <IoMdSettings />
+                  </span>{" "}
+                  Sozlamalar
+                </Link>
+              </li>
+              <li>
+                <Link className="text-[#FF0000] text-[20px]">
+                  <span>
+                    <HiOutlineLogout />
+                  </span>
+                  Chiqish
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
