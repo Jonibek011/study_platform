@@ -68,6 +68,7 @@ function App() {
                 </Suspense>
               ),
             },
+
             {
               path: "testlar",
               element: (

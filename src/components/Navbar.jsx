@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { cn } from "./util/cn";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 //context
 import { AuthContext } from "../context/AuthContext";
 import { useContextSelector } from "use-context-selector";
@@ -11,6 +11,10 @@ import { PiBellBold } from "react-icons/pi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { FiMenu } from "react-icons/fi";
 import { FaEllipsisVertical } from "react-icons/fa6";
+import { TbCalendarDue } from "react-icons/tb";
+import { BsCollectionPlay } from "react-icons/bs";
+import { IoMdSettings } from "react-icons/io";
+import { HiOutlineLogout } from "react-icons/hi";
 //images
 import navImg from "../assets/student/asosiy/nav-img.png";
 //main fuunction
@@ -72,10 +76,10 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-full whitespace-nowrap p-2 shadow-sm"
             >
               <li>
-                <a>Item 1</a>
+                <a>Voqealar</a>
               </li>
               <li>
-                <a>Item 2</a>
+                <a>Obunalar</a>
               </li>
             </ul>
           </div>
@@ -94,19 +98,41 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu  dropdown-content bg-main-bg text-light-text rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
+                <Link className="text-[20px]">
+                  <span>
+                    <TbCalendarDue />
+                  </span>
+                  Voqealar
+                </Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link className="text-[20px]">
+                  {" "}
+                  <span>
+                    <BsCollectionPlay />
+                  </span>{" "}
+                  Obunalar
+                </Link>
               </li>
               <li>
-                <a>Logout</a>
+                <Link className="text-[20px]">
+                  <span>
+                    {" "}
+                    <IoMdSettings />
+                  </span>{" "}
+                  Sozlamalar
+                </Link>
+              </li>
+              <li>
+                <Link className="text-[#FF0000] text-[20px]">
+                  <span>
+                    <HiOutlineLogout />
+                  </span>
+                  Chiqish
+                </Link>
               </li>
             </ul>
           </div>
