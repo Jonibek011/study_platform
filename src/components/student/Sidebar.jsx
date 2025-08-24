@@ -13,6 +13,7 @@ import { BsChatLeftText } from "react-icons/bs";
 import { FiMoon } from "react-icons/fi";
 import { BsHeadset } from "react-icons/bs";
 import { FaXmark } from "react-icons/fa6";
+import { LuBookMarked } from "react-icons/lu";
 //costom navlink
 import CustomLink from "../ui/CustomLink";
 import { Link } from "react-router-dom";
@@ -55,7 +56,7 @@ const Sidebar = memo(function Sidebar({ className = "", ...rest }) {
           </CustomLink>
           <CustomLink to="darslar" end>
             <span>
-              <LiaGraduationCapSolid className="w-6 h-6" />
+              <LuBookMarked className="w-5 h-5" />
             </span>
             <span className="text-lg font-normal">Darslar</span>
           </CustomLink>

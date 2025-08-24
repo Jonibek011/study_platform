@@ -23,6 +23,8 @@ const VazifalarStudent = lazy(() =>
   import("./pages/students/VazifalarStudent")
 );
 
+import DarslarOpen from "./pages/students/DarslarOpen";
+
 //lazy load for teacher
 const ChatlarTeacher = lazy(() => import("./pages/teachers/ChatlarTeacher"));
 const DarsYaratish = lazy(() => import("./pages/teachers/DarsYaratish"));
@@ -51,6 +53,10 @@ function App() {
               element: <AsosiyStudent />,
               children: [
                 {
+                  index: true,
+                  element: <ReytingBoard />,
+                },
+                {
                   path: "reyting",
                   element: <ReytingBoard />,
                 },
@@ -67,6 +73,10 @@ function App() {
                   <DarslarStudent />
                 </Suspense>
               ),
+            },
+            {
+              path: "darslar/:id",
+              element: <DarslarOpen />,
             },
 
             {

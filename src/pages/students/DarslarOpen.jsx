@@ -1,0 +1,89 @@
+import React from "react";
+import { darslar } from "../../backend/student/studenBackend";
+import { Link, useParams } from "react-router-dom";
+import CustomNavLink from "../../components/ui/CustomNavLink";
+
+//icons
+import { IoIosArrowForward } from "react-icons/io";
+import { LiaTelegram } from "react-icons/lia";
+//main function
+function DarslarOpen() {
+  const { id } = useParams();
+  const dataId = Number(id);
+
+  const data = darslar.filter((dars) => dars.id === dataId);
+  const elements = data[0].elements;
+  console.log(data);
+  return (
+    <div className="w-full h-full py-3 overflow-y-auto">
+      <div className="bg-main-bg rounded-lg p-4">
+        <div className="dars-mavzulari lg:w-[40%] xl:w-[35%]">
+          <h2 className="text-title text-[25px] font-bold">{data[0].title}</h2>
+          <p className="text-lg text-lighter-text">
+            Siz ushbu kursni{" "}
+            <span className="text-[#00A34C]">{data?.[0]?.progress}%</span>{" "}
+            tugatdingiz
+          </p>
+          <div className="mavzular mt-3 border border-darslar-border rounded-lg w-full py-3  flex flex-col gap-">
+            <h2 className="font-bold text-title text-xl px-4 border-b border-darslar-border pb-8">
+              Kurs tarkibi
+            </h2>
+            <ul>
+              {elements.map((element) => {
+                return (
+                  <li>
+                    <div className="flex justify-between border-b border-darslar-border px-4 py-3">
+                      <h4 className="font-semibold text-lg text-title">
+                        {element.mavzu}
+                      </h4>
+                      <div className="flex gap-3 items-center">
+                        <span className="text-xs text-lighter-text">
+                          12 min
+                        </span>
+                        <CustomNavLink
+                          to="#"
+                          end
+                          className="border w-8 rounded-lg border-darslar-border inline-flex justify-center items-center h-8"
+                        >
+                          <IoIosArrowForward className="w-5 h-5 text-darslar-teacher-name" />
+                        </CustomNavLink>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="px-4 mt-3 flex items-center justify-between">
+              <div className="flex gap-3 items-center">
+                <div className="profile w-10 h-10 rounded-full overflow-hidden">
+                  <img
+                    src={data[0].userPhoto}
+                    className="h-full min-w-auto object-cover"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h2 className="text-lg text-darslar-teacher-name font-medium">
+                    {data[0].teacher}
+                  </h2>
+                  <p className="text-[15px] text-lighter-text">
+                    {data[0].profession}
+                  </p>
+                </div>
+              </div>
+
+              <div className="teacher-social w-8 h-8 border rounded-lg border-darslar-border">
+                <Link className="w-full h-full inline-flex justify-center items-center  ">
+                  <LiaTelegram className="w-5 h-5 text-darslar-teacher-name" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="video-section"></div>
+      </div>
+    </div>
+  );
+}
+
+export default DarslarOpen;

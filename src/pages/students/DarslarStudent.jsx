@@ -1,18 +1,30 @@
 import React, { memo } from "react";
-
+import clsx from "clsx";
 import { cn } from "../../components/util/cn";
-import { Form } from "react-router-dom";
-
+import { Form, Link } from "react-router-dom";
+//backend
+import { darslar } from "../../backend/student/studenBackend";
 //icons
 import { BiSearch } from "react-icons/bi";
 import { LiaSlidersHSolid } from "react-icons/lia";
+import { FiExternalLink } from "react-icons/fi";
+
+//images
+
 const DarslarStudent = memo(function DarslarStudent({
   className = "",
   ...rest
 }) {
+  console.log(darslar);
   return (
-    <section className={cn(`w-full h-full `, className)} {...rest}>
-      <div className="bg-main-bg p-8 md:rounded-xl w-full absolute top-[90px] left-0 md:static">
+    <section
+      className={cn(
+        `w-full h-full  flex flex-col gap-8 overflow-y-auto`,
+        className
+      )}
+      {...rest}
+    >
+      <div className="filter-section bg-main-bg p-8 md:rounded-xl w-full absolute z-50 top-[90px] left-0 md:static">
         <div className="flex justify-between items-center gap-3 md:hidden  pe-0">
           <Form method="post" className="w-full">
             <div className="relative w-full">
@@ -115,6 +127,83 @@ const DarslarStudent = memo(function DarslarStudent({
           </div>
         </Form>
       </div>
+
+      <diiv className="card-section mt-[120px] md:mt-0 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {darslar?.map((dars) => {
+          return (
+            <div
+              key={dars.id}
+              className="card bg-main-bg overflow-hidden rounded-xl"
+            >
+              <div className="card-header w-full h-[300px] relative">
+                <img
+                  src={dars.image}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+                <div className="teacher-info absolute left-5 bottom-5 flex  gap-3 items-center">
+                  <div className="teacher-img w-9 h-9 rounded-full">
+                    <img
+                      src={dars.userPhoto}
+                      alt=""
+                      className="w-auto h-full rounded-full object-cover"
+                    />
+                  </div>
+                  <p className="text-lg text-white">{dars.teacher}</p>
+                  <Link>
+                    <FiExternalLink className="w-6 h-6 text-white" />
+                  </Link>
+                </div>
+              </div>
+              <div className="card-body p-5 flex flex-col gap-2 relative">
+                <span className="absolute top-5 right-3 badge lg:badge-sm xl:badge-md px-4 py-4 rounded-full bg-[#D8E7FF] text-blue-first text-[15px] font-semibold">
+                  Boshlang'ich
+                </span>
+                <h2 className="text-xl text-title font-bold">{dars.title}</h2>
+                <p className="text-lg text-lightest-text">{dars.subtitle}</p>
+                <div className="progres flex flex-col gap-1">
+                  <div className="progress w-full relative h-[7px] bg-[#E3E3E3] rounded-full ">
+                    <span
+                      style={{ width: dars.progress + "%" }}
+                      className={clsx(
+                        `inline-block absolute top-0 left-0 h-full    `,
+                        {
+                          "bg-[#FFBF00]":
+                            dars.progress >= 50 && dars.progress < 100,
+
+                          "bg-[#FF0D0D]": dars.progress < 50,
+                          "bg-[#10B981]": dars.progress === 100,
+                        }
+                      )}
+                    ></span>
+                  </div>
+                  <p className="text-lightest-text text-[13px] font-normal">
+                    Yakunlandi: {dars.progress}%
+                  </p>
+                </div>
+                <div className="button flex justify-between">
+                  <Link
+                    to={`${dars.id}`}
+                    className="btn rounded-full px-8 font-normal bg-blue-first hover:to-blue-second text-white"
+                  >
+                    Boshlash
+                  </Link>
+
+                  <span
+                    className={`font-medium text-[16px] inline-block self-end ${
+                      dars.progress === 100
+                        ? "text-[#10B981]"
+                        : "text-[#FFBF00]"
+                    }`}
+                  >
+                    {dars.progress === 100 ? "Tugagan" : "Boshlangan"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </diiv>
     </section>
   );
 });

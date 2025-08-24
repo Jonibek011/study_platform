@@ -11,7 +11,7 @@
 
 @theme {
   --color-main-bg: #ffffff;
-  --color-second-bg: oklch(98% 0 0);
+  --color-second-bg: rgb(0, 0, 0, 1);
   --color-logo: #242c3f;
   --color-title: #000000;
   --color-input-border: #aeaeae;
@@ -30,11 +30,13 @@
   --color-nav-text: #242c3f;
   --color-table-text: #3e3e3e;
   --color-input-bg: #ffffff;
+  --color-darslar-border: #cbd4dc;
+  --color-darslar-teacher-name: #13265c;
 }
 
 :root {
   --color-main-bg: #ffffff;
-  --color-second-bg: oklch(98% 0 0);
+  --color-second-bg: rgb(240, 240, 240);
   --color-blue-first: #387aff;
   --color-blue-second: #033fb8;
   --color-chart-column: #00a34c;
@@ -48,6 +50,8 @@
   --color-table-text: #3e3e3e;
   --color-header-border: #c7c7c7;
   --color-input-bg: #ffffff;
+  --color-darslar-border: #cbd4dc;
+  --color-darslar-teacher-name: #13265c;
 }
 .dark {
   --color-main-bg: #16161d;
@@ -65,6 +69,8 @@
   --color-table-text: #dedede;
   --color-header-border: #22222a;
   --color-input-bg: #21212b;
+  --color-darslar-border: #393939;
+  --color-darslar-teacher-name: #3b82f6;
 }
 
 .active {
