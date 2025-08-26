@@ -8,7 +8,8 @@ import { darslar } from "../../backend/student/studenBackend";
 import { BiSearch } from "react-icons/bi";
 import { LiaSlidersHSolid } from "react-icons/lia";
 import { FiExternalLink } from "react-icons/fi";
-
+//components
+import Loading from "../../components/loadings/Loading";
 //images
 
 const DarslarStudent = memo(function DarslarStudent({
@@ -144,7 +145,7 @@ const DarslarStudent = memo(function DarslarStudent({
                 <div className="teacher-info absolute left-5 bottom-5 flex  gap-3 items-center">
                   <div className="teacher-img w-9 h-9 rounded-full">
                     <img
-                      src={dars.userPhoto}
+                      src={dars.userPhoto || <Loading />}
                       alt=""
                       className="w-auto h-full rounded-full object-cover"
                     />
