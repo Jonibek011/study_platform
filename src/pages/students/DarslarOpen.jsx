@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { darslar } from "../../backend/student/studenBackend";
 import { Link, useParams } from "react-router-dom";
 import CustomNavLink from "../../components/ui/CustomNavLink";
@@ -8,7 +8,7 @@ import { LiaTelegram } from "react-icons/lia";
 
 const VideoDars = lazy(() => import("../../components/student/VideoDars"));
 //component
-import VideoLoading from "../../components/loadings/videoLoading";
+import VideoLoading from "../../components/loadings/VideoLoading";
 //main function
 function DarslarOpen() {
   const { id } = useParams();
