@@ -150,32 +150,32 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
           onLoadedMetadata={handleOnLoadMetadata}
         />
         {/* ==================== Video title ======================================================== */}
-        <span className="opacity-0 -translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 inline-block text-3xl font-medium absolute top-5 left-[50%] translate-x-[-50%] text-white">
+        <span className="opacity-0 -translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 inline-block text-lg md:text-2xl lg:text-3xl font-medium absolute top-5 left-[50%] translate-x-[-50%] text-white">
           Video title
         </span>
         {/* ================== ekranga teginish orqali video boshqaruvi ============================================ */}
         <div className="absolute top-[50%] translate-y-[-50%] left-0 w-full flex gap-14 items-center justify-center transition-all duration-400 opacity-0 group-hover:opacity-100">
           <button onClick={backTo}>
-            <IoPlayBack className="w-20 h-20 text-white opacity-20 cursor-pointer" />
+            <IoPlayBack className="w-10 h-10 lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
           </button>
           <div>
             {!togglePlay && (
               <button onClick={pause}>
-                <RiPauseCircleLine className="w-20 h-20 text-white opacity-20 cursor-pointer" />
+                <RiPauseCircleLine className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
               </button>
             )}
             {togglePlay && (
               <button onClick={play}>
-                <MdOutlinePlayCircle className="w-20 h-20 text-white opacity-20 cursor-pointer" />
+                <MdOutlinePlayCircle className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
               </button>
             )}
           </div>
           <button onClick={forwardTo}>
-            <IoPlayForward className="w-20 h-20 text-white opacity-20 cursor-pointer" />
+            <IoPlayForward className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
           </button>
         </div>
         {/* ============= videoni boshqaruvchi buttonlar ====================================== */}
-        <div className="absolute  opacity-0 translate-y-5 transition-all duration-400 z-10 left-0 bottom-4 w-full px-4 group-hover:translate-y-0 flex group-hover:opacity-100 flex-col gap-3">
+        <div className="absolute  opacity-0 translate-y-5 transition-all duration-400 z-10 left-0 bottom-1 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex group-hover:opacity-100 flex-col gap-1 lg:gap-3">
           <input
             type="range"
             min="0"
@@ -190,29 +190,29 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
             }}
           />
           {/* ======================================================== */}
-          <div className="flex justify-between items-center">
-            <div className="flex gap-10 items-center">
-              <div className="pause-and-speed flex gap-4">
+          <div className="flex justify-between items-center  lg:h-8">
+            <div className="flex gap-2 lg:gap-10 items-center ">
+              <div className="pause-and-speed flex gap-1 md:gap-4">
                 <button className="cursor-pointer">
                   <IoPlaySkipBack
-                    className="w-5 h-5 text-white"
+                    className=" w-3 h-3 lg:w-5 lg:h-5 text-white"
                     onClick={backTo}
                   />
                 </button>
                 <div className="flex  items-center">
                   {togglePlay && (
                     <button onClick={play} className="cursor-pointer">
-                      <FaPlay className="w-5 h-5 text-white" />
+                      <FaPlay className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
                     </button>
                   )}
                   {!togglePlay && (
                     <button onClick={pause} className="cursor-pointer">
-                      <FaPause className="w-5 h-5 text-white" />
+                      <FaPause className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
                     </button>
                   )}
                 </div>
                 <button className="cursor-pointer" onClick={forwardTo}>
-                  <IoPlaySkipForward className="w-5 h-5 text-white" />
+                  <IoPlaySkipForward className="w-3 h-3 lg:w-5 lg:h-55 text-white" />
                 </button>
               </div>
               <div className="soud flex items-center gap-5">
@@ -221,7 +221,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                     <button className="cursor-pointer">
                       <HiSpeakerWave
                         onClick={unMute}
-                        className="w-5 h-5 text-white"
+                        className="w-3 h-3  lg:w-5 lg:h-5 text-white"
                       />
                     </button>
                   )}
@@ -229,7 +229,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                     <button className="cursor-pointer">
                       <HiSpeakerXMark
                         onClick={mute}
-                        className="w-5 h-5 text-white"
+                        className="w-3 h-3  lg:w-5 lg:h-5 text-white"
                       />
                     </button>
                   )}
@@ -245,7 +245,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                 />
 
                 <div>
-                  <span className="text-white">
+                  <span className="text-[11px] md:text-[14px] text-white">
                     {videoTime(currentTime)} / {videoTime(time) || ""}
                     {/* 0:12 / {videoTime(selectedVideo?.videoDuration)} */}
                   </span>
@@ -268,7 +268,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-picture-in-picture-on"
+                  className="icon w-4 h-4  lg:w-6 lg:h-6 icon-tabler icons-tabler-outline icon-tabler-picture-in-picture-on"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M11 19h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4" />
@@ -278,13 +278,13 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                 </svg>
               </button>
               <button className="text-white">
-                <IoIosSettings className="w-6 h-6" />
+                <IoIosSettings className="w-4 h-4 lg:w-6 lg:h-6" />
               </button>
               <button
                 className="text-white cursor-pointer"
                 onClick={getFullScreen}
               >
-                <FaExpand className="w-4 h-4" />
+                <FaExpand className="w-3 h-3 lg:w-4 lg:h-4" />
               </button>
             </div>
           </div>
