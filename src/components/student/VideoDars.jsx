@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from "react";
+import { Form } from "react-router-dom";
 //icons
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa6";
@@ -11,10 +12,15 @@ import { IoIosSettings } from "react-icons/io";
 import { RiPauseCircleLine } from "react-icons/ri";
 import { MdOutlinePlayCircle } from "react-icons/md";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
+import { IoStar } from "react-icons/io5";
 // import video1 from "../../assets/student/darslar/end1YnwyFCht3X9t.mp4";
+import toast from "react-hot-toast";
 
+//react hook form
+
+import { useForm } from "react-hook-form";
 //main function
-const VideoDars = memo(function VideoDars({ selectedVideo }) {
+const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
   const [togglePlay, setTogglePlay] = useState(true);
   const [toggleSound, setToggleSound] = useState(true);
   const [volume, setVolume] = useState(0.5);
@@ -22,11 +28,20 @@ const VideoDars = memo(function VideoDars({ selectedVideo }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const containerRef = useRef();
+  const [rating, setRating] = useState(0);
 
   const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     setVolume(newVolume);
     videoRef.current.volume = newVolume;
+  };
+
+  const { register, handleSubmit, reset } = useForm();
+  //onsubmit for feedback
+  const onSubmit = (data) => {
+    toast.success("Habaringiz yuborildi!");
+    console.log(data);
+    reset();
   };
 
   // Slider fonini volume ga qarab yangilash
@@ -75,7 +90,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo }) {
   //  video davomiyligini hisoblash
   const videoTime = (s) => {
     const sec = Math.floor(s);
-    console.log(sec);
+
     const min = Math.floor(sec / 60);
 
     const second = Math.floor(sec % 60);
@@ -112,6 +127,11 @@ const VideoDars = memo(function VideoDars({ selectedVideo }) {
         document.exitFullscreen();
       } else return;
     }
+  };
+
+  //formani tozalash
+  const handleReset = () => {
+    reset();
   };
 
   return (
@@ -269,9 +289,56 @@ const VideoDars = memo(function VideoDars({ selectedVideo }) {
             </div>
           </div>
         </div>
-
-        <div></div>
       </div>
+      <div className="flex items-center gap-8 justify-end h-20">
+        <h2 className="text-title font-[600] text-lg">Darsni Baholash</h2>
+        <div className="flex gap-2 text-lightest-text">
+          {[1, 2, 3, 4, 5].map((star) => {
+            return (
+              <IoStar
+                onClick={() => setRating(star)}
+                className={`w-5 h-5 cursor-pointer`}
+                style={{ color: star <= rating ? "#FFC900" : "#D9D9D9" }}
+              />
+            );
+          })}
+        </div>
+        <button
+          onClick={onNextLesson}
+          className="btn rounded-full px-8 text-white border-none bg-blue-first font-medium hover:bg-blue-first shadow-none"
+        >
+          Keyingi dars
+        </button>
+      </div>
+      <Form
+        method="post"
+        onSubmit={handleSubmit(onSubmit)}
+        className="feedback-section card flex flex-col gap-4  w-full px-5 py-5  border border-darslar-border  shadow-md rounded-xl"
+      >
+        <h2 className="text-lg text-title  font-semibold">Izoh yozish</h2>
+        <div className="flex gap-4">
+          <textarea
+            required
+            {...register("textarea")}
+            name="feedback"
+            className="w-full h-48 text-title border bg-second-bg border-darslar-border rounded-xl p-4"
+            id=""
+          ></textarea>
+
+          <div className="buttons flex flex-col gap-4">
+            <button className="btn text-white bg-blue-first border-none shadow-none hover:bg-blue-first rounded-full px-6 font-medium">
+              Yuborish
+            </button>
+            <button
+              type="button"
+              onClick={handleReset}
+              className="btn border-none shadow-none text-[#3B82F6] bg-[#3B82F624] hover:bg-darslar-active-bg rounded-full px-6 font-medium"
+            >
+              Tozalash
+            </button>
+          </div>
+        </div>
+      </Form>
     </div>
   );
 });

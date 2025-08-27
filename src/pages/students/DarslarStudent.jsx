@@ -185,7 +185,7 @@ const DarslarStudent = memo(function DarslarStudent({
                 <div className="button flex justify-between">
                   <Link
                     to={`${dars.id}`}
-                    className="btn rounded-full px-8 font-normal bg-blue-first hover:to-blue-second text-white"
+                    className="btn shadow-none border-none rounded-full px-8 font-normal bg-blue-first hover:to-blue-second text-white"
                   >
                     Boshlash
                   </Link>

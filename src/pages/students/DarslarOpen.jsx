@@ -1,11 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { darslar } from "../../backend/student/studenBackend";
 import { Link, useParams } from "react-router-dom";
 import CustomNavLink from "../../components/ui/CustomNavLink";
-import VideoDars from "../../components/student/VideoDars";
 //icons
 import { IoIosArrowForward } from "react-icons/io";
 import { LiaTelegram } from "react-icons/lia";
+
+const VideoDars = lazy(() => import("../../components/student/VideoDars"));
+//component
+import VideoLoading from "../../components/loadings/videoLoading";
 //main function
 function DarslarOpen() {
   const { id } = useParams();
@@ -29,10 +32,21 @@ function DarslarOpen() {
     const second = sec % 60;
     return `${min}:${second}`;
   };
+
+  //button orqali keyingi darsga o'tish
+  const nextLesson = () => {
+    const currentIndex = elements.findIndex(
+      (element) => element.video === selectedVideo
+    );
+    const nextIndex = currentIndex + 1;
+    if (nextIndex < elements.length) {
+      setSelectedVideo(elements[nextIndex].video);
+    }
+  };
   return (
     <div className="w-full h-full py-3 overflow-y-auto">
       <div className="bg-main-bg rounded-lg p-4 flex flex-col xl:flex-row gap-8">
-        <div className="dars-mavzulari w-full order-2 xl:order-1 xl:w-[45%] ">
+        <div className="dars-mavzulari w-full order-2 xl:order-1 xl:w-[55%] ">
           <h2 className="text-title text-[25px] font-bold">{data[0].title}</h2>
           <p className="text-lg text-lighter-text">
             Siz ushbu kursni{" "}
@@ -65,7 +79,9 @@ function DarslarOpen() {
                         </span>
                         <button
                           onClick={() => setSelectedVideo(element.video)}
-                          className="border cursor-pointer w-8 rounded-lg border-darslar-border inline-flex justify-center items-center h-8"
+                          className={`${
+                            isActive ? "border-none" : "border"
+                          } cursor-pointer w-8 rounded-lg border-darslar-border inline-flex justify-center items-center h-8`}
                         >
                           <IoIosArrowForward className="w-5 h-5 text-darslar-teacher-name" />
                         </button>
@@ -103,7 +119,13 @@ function DarslarOpen() {
           </div>
         </div>
         <div className="video-section order-1 xl:order-2 w-full h-auto ">
-          <VideoDars className="w-full " selectedVideo={selectedVideo} />
+          <Suspense fallback={<VideoLoading />}>
+            <VideoDars
+              className="w-full "
+              selectedVideo={selectedVideo}
+              onNextLesson={nextLesson}
+            />
+          </Suspense>
         </div>
       </div>
     </div>

@@ -185,3 +185,55 @@
   border: 2px solid #ff0000;
   cursor: pointer;
 }
+
+.loading-shadow {
+  box-shadow: 20px 20px 50px 50px white;
+  rotate: 30deg;
+  bottom: -50%;
+  left: -50%;
+  /* animation: anime 2s infinite; */
+}
+
+@keyframes anime {
+  from {
+    bottom: -50%;
+    left: -150%;
+  }
+
+  to {
+    bottom: 100%;
+    left: 100%;
+  }
+}
+
+.animate-custom-enter {
+  animation: animate 0.4s;
+}
+
+.animate-custom-leave {
+  animation: animateBack 1s;
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animateBack {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
