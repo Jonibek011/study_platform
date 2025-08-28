@@ -184,7 +184,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
 
           {/* ============= videoni boshqaruvchi buttonlar ====================================== */}
           <div
-            className={`absolute   translate-y-5 transition-all duration-400 z-10 left-0 bottom-2 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex ${
+            className={`absolute   translate-y-5 transition-all duration-400 z-10 left-0 bottom-5 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex ${
               showControl ? "opacity-100" : "opacity-0"
             } group-hover:opacity-100 flex-col gap-1 lg:gap-3`}
           >
