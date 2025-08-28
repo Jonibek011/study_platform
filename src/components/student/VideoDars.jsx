@@ -114,28 +114,51 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
   };
 
   //videoni fullscreen rejimiga o'tkazish va qaytarish
-  const getFullScreen = () => {
+  // const getFullScreen = () => {
+  //   const video = videoRef.current;
+  //   const container = containerRef.current;
+
+  //   if (container.requestFullscreen) {
+  //     container.requestFullscreen();
+  //   } else if (container.webkitRequestFullscreen) {
+  //     container.webkitRequestFullscreen(); // Safari
+  //   } else if (container.msRequestFullscreen) {
+  //     container.msRequestFullscreen(); // IE/Edge eski
+  //   } else if (video.webkitEnterFullscreen) {
+  //     video.webkitEnterFullscreen(); // iOS Safari faqat video
+  //   }
+  // };
+
+  // const exitFullScreen = () => {
+  //   if (document.exitFullscreen) {
+  //     document.exitFullscreen();
+  //   } else if (document.webkitExitFullscreen) {
+  //     document.webkitExitFullscreen();
+  //   } else if (document.msExitFullscreen) {
+  //     document.msExitFullscreen();
+  //   }
+  // };
+
+  const toggleFullscreen = () => {
     const video = videoRef.current;
     const container = containerRef.current;
 
-    if (container.requestFullscreen) {
-      container.requestFullscreen();
-    } else if (container.webkitRequestFullscreen) {
-      container.webkitRequestFullscreen(); // Safari
-    } else if (container.msRequestFullscreen) {
-      container.msRequestFullscreen(); // IE/Edge eski
-    } else if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen(); // iOS Safari faqat video
-    }
-  };
-
-  const exitFullScreen = () => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
+    // fullscreen yoqilmagan bo'lsa
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen(); // Safari Mac
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); // iOS Safari
+      }
+    } else {
+      // fullscreenni o'chirish
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
     }
   };
 
@@ -277,7 +300,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
               <div className="setting-section flex items-center gap-3">
                 <button
                   className="text-white cursor-pointer"
-                  onClick={exitFullScreen}
+                  onClick={toggleFullscreen}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +326,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
                 </button>
                 <button
                   className="text-white cursor-pointer"
-                  onClick={getFullScreen}
+                  onClick={toggleFullscreen}
                 >
                   <FaExpand className="w-3 h-3 lg:w-4 lg:h-4" />
                 </button>
