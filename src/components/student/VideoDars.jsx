@@ -157,28 +157,31 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
         </span>
         {/* ================== ekranga teginish orqali video boshqaruvi ============================================ */}
         <div>
-          {showControl && (
-            <div className="absolute top-[50%] translate-y-[-50%] left-0 w-full flex gap-14 items-center justify-center transition-all duration-400 opacity-0 group-hover:opacity-100">
-              <button onClick={backTo}>
-                <IoPlayBack className="w-10 h-10 lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-              </button>
-              <div>
-                {!togglePlay && (
-                  <button onClick={pause}>
-                    <RiPauseCircleLine className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-                  </button>
-                )}
-                {togglePlay && (
-                  <button onClick={play}>
-                    <MdOutlinePlayCircle className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-                  </button>
-                )}
-              </div>
-              <button onClick={forwardTo}>
-                <IoPlayForward className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-              </button>
+          <div
+            className={`absolute top-[50%] translate-y-[-50%] left-0 w-full flex gap-14 items-center justify-center transition-all duration-400 ${
+              showControl ? "opacity-100" : "opacity-0"
+            } group-hover:opacity-100`}
+          >
+            <button onClick={backTo}>
+              <IoPlayBack className="w-10 h-10 lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+            </button>
+            <div>
+              {!togglePlay && (
+                <button onClick={pause}>
+                  <RiPauseCircleLine className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+                </button>
+              )}
+              {togglePlay && (
+                <button onClick={play}>
+                  <MdOutlinePlayCircle className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+                </button>
+              )}
             </div>
-          )}
+            <button onClick={forwardTo}>
+              <IoPlayForward className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+            </button>
+          </div>
+
           {/* ============= videoni boshqaruvchi buttonlar ====================================== */}
           <div className="absolute  opacity-0 translate-y-5 transition-all duration-400 z-10 left-0 bottom-1 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex group-hover:opacity-100 flex-col gap-1 lg:gap-3">
             <input
