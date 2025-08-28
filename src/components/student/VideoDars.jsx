@@ -115,18 +115,27 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
 
   //videoni fullscreen rejimiga o'tkazish va qaytarish
   const getFullScreen = () => {
-    if (containerRef.current) {
-      if (!document.fullscreenElement) {
-        containerRef.current.requestFullscreen();
-      } else return;
+    const video = videoRef.current;
+    const container = containerRef.current;
+
+    if (container.requestFullscreen) {
+      container.requestFullscreen();
+    } else if (container.webkitRequestFullscreen) {
+      container.webkitRequestFullscreen(); // Safari
+    } else if (container.msRequestFullscreen) {
+      container.msRequestFullscreen(); // IE/Edge eski
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen(); // iOS Safari faqat video
     }
   };
 
   const exitFullScreen = () => {
-    if (containerRef.current) {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else return;
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
     }
   };
 
