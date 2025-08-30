@@ -22,6 +22,7 @@ const TestlarStudent = lazy(() => import("./pages/students/TestlarStudent"));
 const VazifalarStudent = lazy(() =>
   import("./pages/students/VazifalarStudent")
 );
+const TeacherInfo = lazy(() => import("./pages/students/TeacherInfo"));
 
 import DarslarOpen from "./pages/students/DarslarOpen";
 
@@ -77,6 +78,14 @@ function App() {
             {
               path: "darslar/:id",
               element: <DarslarOpen />,
+            },
+            {
+              path: "darslar/:id/teacher",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <TeacherInfo />
+                </Suspense>
+              ),
             },
 
             {

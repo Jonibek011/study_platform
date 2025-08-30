@@ -111,7 +111,10 @@ function DarslarOpen() {
               </div>
 
               <div className="teacher-social w-8 h-8 border rounded-lg border-darslar-border">
-                <Link className="w-full h-full inline-flex justify-center items-center  ">
+                <Link
+                  to="teacher"
+                  className="w-full h-full inline-flex justify-center items-center  "
+                >
                   <LiaTelegram className="w-5 h-5 text-darslar-teacher-name" />
                 </Link>
               </div>

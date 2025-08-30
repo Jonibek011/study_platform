@@ -2,8 +2,11 @@
 import math from "../../assets/student/darslar/Rectangle 24.png";
 import english from "../../assets/student/darslar/Rectangle 25.png";
 import fizic from "../../assets/student/darslar/Rectangle 21.png";
+import geometry from "../../assets/student/darslar/Gemetriya.png";
+import secondModule from "../../assets/student/darslar/matematika-2-modul.png";
 
 const images = [math, english, fizic];
+const innerImages = [math, geometry, secondModule];
 export const darslar = [
   {
     id: 1,
@@ -11,6 +14,59 @@ export const darslar = [
     subtitle: "Algebra asoslari va amaliy misollar",
     teacher: "Dildora Tojiyeva",
     profession: "Matematika o'qituvchisi",
+    teacherInfo: {
+      ismi: "Dildora",
+      familiyasi: "Tojiyeva",
+      kasbi: "Matematika fani o'qituvchisi",
+      tajribasi: 6,
+      ixtisosligi: "Algebra, Geometriya va oliy matematika",
+      talim: "Toshkent Davlat Pedagogika universiteti Matemetika fakulteti",
+      darajasi: "Magistratura",
+      yondashuvi:
+        "Har bir o‘quvchining individual qobiliyatiga qarab yondashadi, murakkab mavzularni sodda va tushunarli uslubda o‘rgatadi",
+      yutuqlari: [
+        "2023-yilda \"Yilning eng yaxshi o'qituvchisi\" nominatsiyasi g'olibii",
+        "5000+ o'quvchiga onlayn matematika fanidan dars bergan ",
+        "Respublika fan olimpiadasi ishtirokchisi va sovrindori",
+      ],
+      darslar: [
+        {
+          id: 1,
+          title: "Matematika 1-modul",
+          subtitle: "Algebra asoslari va amaliy misollar",
+          image: innerImages[0],
+          progress: 63,
+          teacher: "Dildora Tojiyeva",
+          status: "Boshlash",
+          userPhoto:
+            "https://media.istockphoto.com/id/846730696/photo/portrait-teenager.jpg?b=1&s=612x612&w=0&k=20&c=F6F54Is5POZluWmrrJZS5x4NyTJ8JlJTpmddAain-so=",
+          degree: "Boshlang'ich",
+        },
+        {
+          id: 2,
+          title: "Geometriyaga kirish",
+          subtitle: "Shakllar bilan tanishish",
+          image: innerImages[1],
+          teacher: "Dildora Tojiyeva",
+          status: "Boshlash",
+          userPhoto:
+            "https://media.istockphoto.com/id/846730696/photo/portrait-teenager.jpg?b=1&s=612x612&w=0&k=20&c=F6F54Is5POZluWmrrJZS5x4NyTJ8JlJTpmddAain-so=",
+          degree: "Boshlang'ich",
+        },
+        {
+          id: 3,
+          title: "Matematika 2-modul",
+          subtitle: "Triganometriya va tenglamalar",
+          image: innerImages[2],
+          teacher: "Dildora Tojiyeva",
+          status: "Boshlash",
+          userPhoto:
+            "https://media.istockphoto.com/id/846730696/photo/portrait-teenager.jpg?b=1&s=612x612&w=0&k=20&c=F6F54Is5POZluWmrrJZS5x4NyTJ8JlJTpmddAain-so=",
+          degree: "Boshlang'ich",
+        },
+      ],
+    },
+
     image: images[0],
     progress: 63,
 
