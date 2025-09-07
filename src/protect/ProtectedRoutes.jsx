@@ -7,7 +7,7 @@ function ProtectedRoutes({ role }) {
   const user = useContextSelector(AuthContext, (ctx) => ctx.user);
 
   if (!user) {
-    return <Navigate to="/login" replace />; // ✅ return yozilishi shart
+    return <Navigate to="/auth/login" replace />; // ✅ return yozilishi shart
   }
 
   if (role && role !== user.role) {

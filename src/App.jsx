@@ -33,11 +33,15 @@ const TestYaratish = lazy(() => import("./pages/teachers/TestYaratish"));
 const VazifaYaratish = lazy(() => import("./pages/teachers/VazifaYaratish"));
 
 //import register pages
-import Login from "./pages/register/Login";
-import SignUp from "./pages/register/SignUp";
+import LoginStep1 from "./pages/register/login/LoginStep1";
+import SignUpStep1 from "./pages/register/SignUpStep1";
+import SignUpStep2 from "./pages/register/signup/SignUpStep2";
+import SignUpStep3 from "./pages/register/signup/SignUpStep3";
+import SignUpStep4 from "./pages/register/signup/SignUpStep4";
 
 // import page not found
 import PageNotFound from "./components/pageNotFound/PageNotFound";
+import LoginStep2 from "./pages/register/login/LoginStep2";
 
 //main function
 function App() {
@@ -164,16 +168,32 @@ function App() {
       ],
     },
     {
-      path: "login",
-      element: <Login />,
+      path: "/auth/login",
+      element: <LoginStep1 />,
     },
     {
-      path: "register",
-      element: <SignUp />,
+      path: "/auth/login/verify-otp",
+      element: <LoginStep2 />,
+    },
+    {
+      path: "auth/step/send-otp",
+      element: <SignUpStep1 />,
+    },
+    {
+      path: "auth/step/verify-otp",
+      element: <SignUpStep2 />,
+    },
+    {
+      path: "auth/step/set-name",
+      element: <SignUpStep3 />,
+    },
+    {
+      path: "auth/step/set-role",
+      element: <SignUpStep4 />,
     },
     {
       path: "/",
-      element: <Navigate to="/login" replace />,
+      element: <Navigate to="/auth/login" replace />,
     },
     {
       path: "*",
