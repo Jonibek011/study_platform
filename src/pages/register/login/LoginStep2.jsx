@@ -1,16 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //react otp input
 import OTPInput from "react-otp-input";
 
 //context
 import { useContextSelector } from "use-context-selector";
 import { AuthContext } from "../../../context/AuthContext";
+import { authBackend } from "../../../backend/authBackend";
+import { Form } from "react-router-dom";
 function LoginStep2() {
   const [code, setCode] = useState("");
 
   //context
   const phoneNumber = useContextSelector(AuthContext, (ctx) => ctx.phoneNumber);
-  console.log(phoneNumber);
+
+  useEffect(() => {
+    const getAsyncData = async () => {
+      const req = await authBackend({ phone: "+" + phoneNumber }, "auth/login");
+      console.log("loginstep2 send otp", req);
+    };
+
+    getAsyncData();
+  }, []);
+
+  const login2HandleSubmit = async (e) => {
+    e.preventDefault();
+    const req = await authBackend(
+      { phone: "+" + phoneNumber },
+      "auth/login/verify-otp"
+    );
+    console.log("login last response", req);
+  };
 
   const hideNumber = (str) => {
     return (
@@ -25,7 +44,11 @@ function LoginStep2() {
   };
   return (
     <div className="w-full h-[100vh] flex justify-center items-center bg-[#D9D9D9]">
-      <div className="login-step1-card w-[90%] md:w-sm lg:w-md xl:w-lg shadow-md 2xl:w-xl rounded-lg p-3 md:p-4 lg:p-8 xl:p-10 bg-main-bg flex flex-col gap-3 md:gap-5">
+      <Form
+        method="post"
+        onSubmit={login2HandleSubmit}
+        className="login-step1-card w-[90%] md:w-sm lg:w-md xl:w-lg shadow-md 2xl:w-xl rounded-lg p-3 md:p-4 lg:p-8 xl:p-10 bg-main-bg flex flex-col gap-3 md:gap-5"
+      >
         <h2 className="text-lg md:text-xl text-title text-center font-medium">
           Kirish
         </h2>
@@ -41,11 +64,11 @@ function LoginStep2() {
           <OTPInput
             value={code}
             onChange={setCode}
-            numInputs={4}
+            numInputs={6}
             shouldAutoFocus // ✅ shu prop birinchi inputni default active qiladi
             renderInput={(props) => <input {...props} />}
             inputStyle={{
-              width: "70px",
+              width: "40px",
               height: "40px",
               margin: "0 8px",
               fontSize: "20px",
@@ -67,7 +90,7 @@ function LoginStep2() {
         <button className="btn mt-5 bg-blue-first hover:bg-blue-first rounded-xl text-white font-medium lg:text-lg">
           SMS kodni yuborish
         </button>
-      </div>
+      </Form>
     </div>
   );
 }

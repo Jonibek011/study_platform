@@ -22,14 +22,14 @@ function LoginStep1() {
     setLoginPending(true);
     const res = await authBackend({ phone }, "auth/check");
     dispatch({ type: "PHONE", payload: phone });
-    console.log(res);
+    console.log("login chek", res);
     setLoginPending(false);
     if (res.statusCode !== 200) return;
-    if (res?.data?.registered && res?.data?.step === 1) {
-      return navigation("/auth/step/verify-otp");
+    if (res?.data?.registered) {
+      return navigation("/auth/step/send-otp");
     }
 
-    return navigation("/auth/step/verify-otp");
+    return navigation("/auth/login/verify-otp");
   };
 
   return (

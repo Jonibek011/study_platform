@@ -31,7 +31,7 @@ function SignUpStep2() {
     getAsyncData();
   }, []);
   //console.log
-  console.log(response);
+  console.log("signupstep2 send otp", response);
 
   const step2HandleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +42,7 @@ function SignUpStep2() {
     );
     console.log("step2dan submitRequest", request);
 
-    if (request.statusCode === 200 && request.step === 2) {
+    if (request.statusCode === 200) {
       return navigation("/auth/step/set-name");
     }
 
@@ -91,7 +91,7 @@ function SignUpStep2() {
             SMS kodini kiriting
           </h2>
           <p className="text-light-text text-center">
-            SMS kodi +{hideNumber("998916999498")} raqamiga yuborildi
+            SMS kodi +{hideNumber(phoneNumber)} raqamiga yuborildi
           </p>
           <div className="flex flex-col gap-2 justify-center items-center">
             <OTPInput
