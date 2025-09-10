@@ -14,7 +14,7 @@ const changeState = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
   const initialState = {
-    user: { role: "student", displayName: "Anvar A." },
+    user: { role: "teacher", displayName: "Anvar A." },
     // user: true,
     phoneNumber: null,
   };
