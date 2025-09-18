@@ -34,6 +34,7 @@
   --color-darslar-teacher-name: #13265c;
   --color-darslar-mavzu-hover: rgb(243, 243, 243);
   --color-darslar-active-bg: #dbe9ff;
+  --color-green-button: #10b981;
 }
 
 :root {
@@ -56,6 +57,7 @@
   --color-darslar-teacher-name: #13265c;
   --color-darslar-mavzu-hover: rgb(243, 243, 243);
   --color-darslar-active-bg: #dbe9ff;
+  --color-green-button: #10b981;
 }
 .dark {
   --color-main-bg: #16161d;
@@ -77,6 +79,7 @@
   --color-darslar-teacher-name: #3b82f6;
   --color-darslar-mavzu-hover: rgb(26, 26, 53);
   --color-darslar-active-bg: #23334d;
+  --color-green-button: #00734d;
 }
 
 .active {

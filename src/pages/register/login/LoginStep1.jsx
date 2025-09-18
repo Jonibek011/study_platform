@@ -18,15 +18,6 @@ function LoginStep1() {
   const [phone, setPhone] = useState("");
   const [loginPending, setLoginPending] = useState(false);
 
-  if (user.role) {
-    if (user.role === "teacher") {
-      return navigation("/teacher");
-    }
-
-    if (user.role === "student") {
-      return navigation("/student");
-    }
-  }
   const handleSubmit = async () => {
     setLoginPending(true);
     const res = await authBackend({ phone }, "auth/check");

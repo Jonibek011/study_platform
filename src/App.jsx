@@ -31,7 +31,15 @@ const ChatlarTeacher = lazy(() => import("./pages/teachers/ChatlarTeacher"));
 const DarsYaratish = lazy(() => import("./pages/teachers/DarsYaratish"));
 const TestYaratish = lazy(() => import("./pages/teachers/TestYaratish"));
 const VazifaYaratish = lazy(() => import("./pages/teachers/VazifaYaratish"));
-
+const DarsYaratishStep1 = lazy(() =>
+  import("./pages/teachers/DarsYaratishStep1")
+);
+const DarsYaratishStep2 = lazy(() =>
+  import("./pages/teachers/DarsYaratishStep2")
+);
+const DarsYaratishStep3 = lazy(() =>
+  import("./pages/teachers/DarsYaratishStep3")
+);
 //import register pages
 import LoginStep1 from "./pages/register/login/LoginStep1";
 import SignUpStep1 from "./pages/register/SignUpStep1";
@@ -136,6 +144,30 @@ function App() {
               element: (
                 <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <DarsYaratish />
+                </Suspense>
+              ),
+            },
+            {
+              path: "darslar/step1",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <DarsYaratishStep1 />
+                </Suspense>
+              ),
+            },
+            {
+              path: "darslar/step2",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <DarsYaratishStep2 />
+                </Suspense>
+              ),
+            },
+            {
+              path: "darslar/step3",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <DarsYaratishStep3 />
                 </Suspense>
               ),
             },
