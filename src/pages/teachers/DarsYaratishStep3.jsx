@@ -34,10 +34,19 @@ const data = [
     duration: "32 daqiqa 23 soniya",
   },
 ];
+
+//rrd
+import { useNavigate } from "react-router-dom";
 function DarsYaratishStep3() {
+  const navigation = useNavigate();
+
+  const handleClick = () => {
+    navigation("/teacher/darslar");
+  };
+
   return (
-    <section className="max-w-[1200px] flex flex-col gap-5 w-full h-full  md:rounded-xl p-3 md:p-8 lg:pe-20 bg-main-bg ">
-      <div className="steps  w-full h-28 py-4  flex flex-col gap-5">
+    <section className="max-w-[1200px] flex flex-col gap-5 w-full h-full overflow-y-auto  md:rounded-xl p-3 md:p-8 lg:pe-20 bg-main-bg ">
+      <div className="steps  w-full min-h-28   py-4  flex flex-col gap-5">
         <div className="step-container rounded-full  relative w-[85%]  lg:w-[70%] h-1 md:h-2 ml-2   sm:ml-8 bg-[#DFE5EF] flex justify-between items-center">
           <div className="absolute top-0 left-0 w-[100%] h-full bg-blue-first z-0"></div>
           <span className="span-1 relative z-10 w-7 h-7 md:w-10 md:h-10 rounded-full bg-blue-first text-white flex justify-center items-center text-lg ">
@@ -61,10 +70,13 @@ function DarsYaratishStep3() {
         </div>
       </div>
 
-      <div className="button-section flex justify-between  gap-5">
+      <div className="button-section flex justify-between   gap-5">
         <h2 className="text-xl font-bold text-title">Tekshirish va Saqlash</h2>
 
-        <button className="btn btn-sm sm:btn-md rounded-full bg-blue-first text-white shadow-sm border-none px-7 font-medium text-lg">
+        <button
+          onClick={handleClick}
+          className="btn btn-sm sm:btn-md rounded-full bg-blue-first text-white shadow-sm border-none px-7 font-medium text-lg"
+        >
           Saqlash
         </button>
       </div>
@@ -91,7 +103,7 @@ function DarsYaratishStep3() {
           </p>
         </div>
       </div>
-      <div className="darslar-container overflow-y-auto  flex flex-col gap-4  ">
+      <div className="darslar-container   flex flex-col gap-4  ">
         {!data && (
           <h2 className="opacity-20 text-title text-3xl text-center h-[50vh] flex justify-center items-center">
             🤷‍♀️ Hozircha videolar qo'shilmadi

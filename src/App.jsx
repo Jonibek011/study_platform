@@ -40,6 +40,9 @@ const DarsYaratishStep2 = lazy(() =>
 const DarsYaratishStep3 = lazy(() =>
   import("./pages/teachers/DarsYaratishStep3")
 );
+const TestYaratishStep2 = lazy(() =>
+  import("./pages/teachers/TestYaratishStep2")
+);
 //import register pages
 import LoginStep1 from "./pages/register/login/LoginStep1";
 import SignUpStep1 from "./pages/register/SignUpStep1";
@@ -116,6 +119,7 @@ function App() {
                 </Suspense>
               ),
             },
+
             {
               path: "chatlar",
               element: (
@@ -179,6 +183,15 @@ function App() {
                 </Suspense>
               ),
             },
+            {
+              path: "test-yaratish",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <TestYaratishStep2 />
+                </Suspense>
+              ),
+            },
+
             {
               path: "chatlar",
               element: (
