@@ -83,7 +83,7 @@ function TestYaratish() {
             onClick={() =>
               document.getElementById("yangiTestYaratish-modal").showModal()
             }
-            className="btn border-none shadow-sm rounded-full text-white font-medium px-7 bg-blue-first hover:bg-blue-first"
+            className="btn border-none whitespace-nowrap shadow-sm rounded-full text-white font-medium px-7 bg-blue-first hover:bg-blue-first"
           >
             + Yangi topshiriq yaratish
           </button>
