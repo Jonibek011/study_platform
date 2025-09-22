@@ -94,8 +94,8 @@ function TestYaratish() {
         <h2 className="text-xl text-title font-semibold">
           Mavjud topshiriqlar
         </h2>
-        {!data && (
-          <span className=" w-full h-[40vh] flex justify-center items-center text-2xl font-semibold opacity-40">
+        {mapData.length === 0 && (
+          <span className=" w-full h-[40vh] flex justify-center items-center text-xl md:text-2xl font-semibold opacity-40">
             🤷‍♂️Topshiriqlar mavjud emas!
           </span>
         )}
