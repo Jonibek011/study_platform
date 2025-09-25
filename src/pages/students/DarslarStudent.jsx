@@ -79,7 +79,7 @@ const DarslarStudent = memo(function DarslarStudent({
                       <option>South East Asia</option>
                     </select>
 
-                    <button className="btn rounded-xl xl:px-14 whitespace-nowrap  w-auto bg-blue-first text-white font-medium text-lg border-none shadow-none">
+                    <button className="btn   rounded-xl xl:px-14 whitespace-nowrap  w-auto bg-blue-first text-white font-medium text-lg border-none shadow-none">
                       Natijani ko'rish
                     </button>
                   </div>
@@ -122,7 +122,7 @@ const DarslarStudent = memo(function DarslarStudent({
               <option>South East Asia</option>
             </select>
 
-            <button className="btn rounded-xl xl:px-14 whitespace-nowrap  w-auto bg-blue-first text-white font-medium text-lg">
+            <button className="btn shadow-none border-none rounded-xl xl:px-14 whitespace-nowrap  w-auto bg-blue-first text-white font-medium text-lg">
               Natijani ko'rish
             </button>
           </div>

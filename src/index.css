@@ -35,6 +35,11 @@
   --color-darslar-mavzu-hover: rgb(243, 243, 243);
   --color-darslar-active-bg: #dbe9ff;
   --color-green-button: #10b981;
+  --color-chat-user-border: #ebebeb;
+  --color-active-chat: #e6edff;
+  --color-chat-bg: #e6f1ff;
+  --color-chat-hover: rgb(235, 235, 235);
+  --color-sidebar-hover: rgb(243, 243, 243);
 }
 
 :root {
@@ -58,6 +63,11 @@
   --color-darslar-mavzu-hover: rgb(243, 243, 243);
   --color-darslar-active-bg: #dbe9ff;
   --color-green-button: #10b981;
+  --color-chat-user-border: #ebebeb;
+  --color-active-chat: #e6edff;
+  --color-chat-bg: #e6f1ff;
+  --color-chat-hover: rgb(235, 235, 235);
+  --color-sidebar-hover: rgb(243, 243, 243);
 }
 .dark {
   --color-main-bg: #16161d;
@@ -80,6 +90,11 @@
   --color-darslar-mavzu-hover: rgb(26, 26, 53);
   --color-darslar-active-bg: #23334d;
   --color-green-button: #00734d;
+  --color-chat-user-border: #333641;
+  --color-active-chat: #23334d;
+  --color-chat-bg: #20202b;
+  --color-chat-hover: rgb(41, 41, 41);
+  --color-sidebar-hover: rgb(37, 37, 63);
 }
 
 .active {

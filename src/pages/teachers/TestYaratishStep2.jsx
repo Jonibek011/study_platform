@@ -17,6 +17,10 @@ function TestYaratishStep2() {
   const [rasmYuklangan, setRasmYuklangan] = useState(false);
   const [loading, setLoading] = useState(false);
   const [savolRaqami, setSavolRaqami] = useState(1);
+  const [variant1, setVariant1] = useState(false);
+  const [variant2, setVariant2] = useState(false);
+  const [variant3, setVariant3] = useState(false);
+  const [variant4, setVariant4] = useState(false);
   const fileInputRef = useRef();
   const formRef = useRef();
 
@@ -133,8 +137,18 @@ function TestYaratishStep2() {
                 Variantlarni kiriting (to'g'ri javobni belgilang)
               </h2>
               <div className="flex flex-col gap-3">
-                <label className="w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2">
+                <label
+                  className={`w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2 ${
+                    variant1 ? "bg-[#3B82F624]" : "bg-input-bg"
+                  }`}
+                >
                   <input
+                    onChange={() => {
+                      setVariant1(true);
+                      setVariant2(false);
+                      setVariant3(false);
+                      setVariant4(false);
+                    }}
                     type="radio"
                     name="variant"
                     className="radio text-input-border checked:text-blue-first "
@@ -145,8 +159,18 @@ function TestYaratishStep2() {
                   />
                 </label>
 
-                <label className="w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2">
+                <label
+                  className={`w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2 ${
+                    variant2 ? "bg-[#3B82F624]" : "bg-input-bg"
+                  }`}
+                >
                   <input
+                    onChange={() => {
+                      setVariant1(false);
+                      setVariant2(true);
+                      setVariant3(false);
+                      setVariant4(false);
+                    }}
                     type="radio"
                     name="variant"
                     className="radio text-input-border checked:text-blue-first "
@@ -157,8 +181,18 @@ function TestYaratishStep2() {
                   />
                 </label>
 
-                <label className="w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2">
+                <label
+                  className={`w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2 ${
+                    variant3 ? "bg-[#3B82F624]" : "bg-input-bg"
+                  }`}
+                >
                   <input
+                    onChange={() => {
+                      setVariant1(false);
+                      setVariant2(false);
+                      setVariant3(true);
+                      setVariant4(false);
+                    }}
                     type="radio"
                     name="variant"
                     className="radio text-input-border checked:text-blue-first "
@@ -169,8 +203,18 @@ function TestYaratishStep2() {
                   />
                 </label>
 
-                <label className="w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2">
+                <label
+                  className={`w-full flex items-center gap-2 border border-darslar-border focus:border-2 rounded px-3 py-2 ${
+                    variant4 ? "bg-[#3B82F624]" : "bg-input-bg"
+                  }`}
+                >
                   <input
+                    onChange={() => {
+                      setVariant1(false);
+                      setVariant2(false);
+                      setVariant3(false);
+                      setVariant4(true);
+                    }}
                     type="radio"
                     name="variant"
                     className="radio text-input-border checked:text-blue-first "

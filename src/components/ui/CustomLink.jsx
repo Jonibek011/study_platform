@@ -10,7 +10,7 @@ function CustomLink({ to, children, end = false }) {
          ${
            isActive
              ? "bg-blue-first text-white hover:bg-blue-first"
-             : "hover:bg-gray-200"
+             : "hover:bg-sidebar-hover"
          }`
       }
     >

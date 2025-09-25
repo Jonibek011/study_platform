@@ -6,13 +6,13 @@ import { AuthContext } from "../context/AuthContext";
 function ProtectedRoutes({ role }) {
   const user = useContextSelector(AuthContext, (ctx) => ctx.user);
 
-  if (!user) {
-    return <Navigate to="/auth/login" replace />; // ✅ return yozilishi shart
-  }
+  // if (!user) {
+  //   return <Navigate to="/auth/login" replace />; // ✅ return yozilishi shart
+  // }
 
-  if (role && role !== user.role) {
-    return <Navigate to="/" replace />; // ✅ return yozilishi shart
-  }
+  // if (role && role !== user.role) {
+  //   return <Navigate to="/" replace />; // ✅ return yozilishi shart
+  // }
 
   return <Outlet />;
 }
