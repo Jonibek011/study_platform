@@ -15,6 +15,7 @@ import { TbCalendarDue } from "react-icons/tb";
 import { BsCollectionPlay } from "react-icons/bs";
 import { IoMdSettings } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
+
 //images
 import navImg from "../assets/student/asosiy/nav-img.png";
 import navImgLight from "../assets/student/asosiy/image 22.png";
@@ -46,7 +47,7 @@ const Navbar = memo(function Navbar({ className = "", ...rest }) {
             <label className="input input-lg w-full bg-second-bg rounded-lg   ">
               <input
                 type="search"
-                placeholder="Qidirsh..."
+                placeholder="Qidirish..."
                 className="placeholder:text-light-text text-title "
               />
               <CgSearch className="text-black-gray w-5 h-5" />
