@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-router-dom";
 import image from "../../assets/teacher/dashboard/Ellipse 5.png";
 //icons
 import { BiSearch } from "react-icons/bi";
 import { LiaSlidersHSolid } from "react-icons/lia";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 //components
 import Modal from "../../components/Modal";
-import FileInput from "../../components/student/FileInput";
+import UploadTask from "../../components/student/UploadTask";
+import RejectTask from "../../components/student/RejectTask";
+import SuccessTask from "../../components/student/SuccessTask";
 
+//toolbar
+import RichToolbar from "../../components/student/RichToolbar";
 //use window size
 import { useWindowSize } from "../../hooks/optimizationHooks/useWindowSize";
 const data = [
@@ -63,11 +68,11 @@ const data = [
 ];
 function VazifalarStudent() {
   const { width } = useWindowSize();
-  const [file, setFile] = useState(null);
-  console.log(file);
+
   const handleButtonClick = () => {
     document.getElementById("vazifa-yuklash-modal").showModal();
   };
+
   return (
     <>
       <section className="flex flex-col gap-5 h-full overflow-y-auto">
@@ -264,29 +269,35 @@ function VazifalarStudent() {
       </section>
       <Modal
         id="vazifa-yuklash-modal"
-        className="absolute top-[90px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[80%]  max-w-6xl"
+        className="absolute rounded-none md:rounded-xl top-[90px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[80%]  max-w-6xl"
         buttonClass="btn-lg text-red-500 font-semibold text-xl"
       >
         <div className="flex flex-col gap-3 lg:px-5">
-          <h2 className="text-title font-semibold text-xl">
+          <button
+            onClick={() =>
+              document.getElementById("vazifa-yuklash-modal").close()
+            }
+            className="text-[#374DBC] self-start md:hidden flex gap-1 items-center"
+          >
+            <FaArrowLeftLong /> Orqaga
+          </button>
+          <h2 className="text-title font-semibold text-lg sm:text-xl">
             Algebra-3. 5-topshiriqlar
           </h2>
-          <div className="flex gap-7">
-            <p className="text-light-text">
+          <div className="flex gap-2 md:gap-7 flex-col md:flex-row">
+            <p className="text-light-text text-sm sm:text-[16px]">
               Savol: Chiziqli tenglamalar va ularni grafik usulda yeching
             </p>
-            <button className="text-blue-first underline cursor-pointer whitespace-nowrap">
+            <button className="self-start text-blue-first underline cursor-pointer whitespace-nowrap text-sm md:text-[16px]">
               Manbani yuklab olish
             </button>
           </div>
           <hr className="text-darslar-border mt-3" />
         </div>
-        <div>
-          <Form className="p-6 flex w-full h-full">
-            <div className="left-side w-full h-full min-h-md max-w-md">
-              <FileInput accept="image/*, .pdf, .doc, .docx" onFile={setFile} />
-            </div>
-          </Form>
+        <div className="modal-content w-full  ">
+          <UploadTask />
+          {/* <RejectTask /> */}
+          {/* <SuccessTask /> */}
         </div>
       </Modal>
     </>

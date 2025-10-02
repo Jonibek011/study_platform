@@ -17,7 +17,7 @@ const Modal = memo(function Modal({
             {/* if there is a button in form, it will close the modal */}
             <button
               className={cn(
-                `btn btn-sm btn-circle btn-ghost absolute right-2 top-2`,
+                `hidden md:block btn btn-sm btn-circle btn-ghost absolute right-2 top-2`,
                 buttonClass
               )}
             >

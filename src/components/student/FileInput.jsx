@@ -6,6 +6,7 @@ import { MdOutlineFileUpload } from "react-icons/md";
 //toast
 import toast from "react-hot-toast";
 const FileInput = memo(function FileInput({
+  value,
   onFile,
   className = "",
   accept,
@@ -15,7 +16,6 @@ const FileInput = memo(function FileInput({
   const inputRef = useRef();
 
   const [dragOverEffect, setDragOverEffect] = useState(false);
-  const [dropEffect, setDropEffect] = useState(false);
 
   const onChange = (e) => {
     const file = e.target.files?.[0];
@@ -47,7 +47,6 @@ const FileInput = memo(function FileInput({
     }
 
     if (onFile) onFile(file);
-    setDropEffect(true);
   };
   return (
     <div className={cn(`w-full h-full`, className)} {...rest}>
@@ -57,6 +56,7 @@ const FileInput = memo(function FileInput({
         className="hidden"
         accept={accept}
         onChange={onChange}
+        key={value ? value.name : "empty"}
       />
       <div
         className={cn(
@@ -81,9 +81,9 @@ const FileInput = memo(function FileInput({
           <button
             onClick={() => inputRef.current.click()}
             className="btn rounded-full   px-8 btn-sm border-none shadow-sm bg-blue-first text-white font-medium mt-4 disabled:bg-red-500"
-            disabled={dropEffect}
+            disabled={value}
           >
-            {dropEffect ? "Fayl yuklandi" : "Faylni yuklash"}
+            {value ? "Fayl yuklandi" : "Faylni yuklash"}
           </button>
         </div>
       </div>
