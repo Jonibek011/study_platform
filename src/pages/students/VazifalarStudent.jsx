@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-router-dom";
 import image from "../../assets/teacher/dashboard/Ellipse 5.png";
 //icons
@@ -19,48 +19,56 @@ import { useWindowSize } from "../../hooks/optimizationHooks/useWindowSize";
 const data = [
   {
     mavzu: "Algebra-3,5-topshiriqlar",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Dildora Tojiyeva",
     muddati: "21.08.2025",
     status: "Ko'rilmagan",
   },
   {
     mavzu: "Fizika: Harakat qonunlari",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Feruza Jonibekova",
     muddati: "21.08.2025",
     status: "Ko'rilmagan",
   },
   {
     mavzu: "Ingliz tili: Present Simple Tense",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Nasiba To'raboyeva",
     muddati: "21.08.2025",
     status: "Ko'rilmagan",
   },
   {
     mavzu: "Ingliz tili: Present Continuous Tense",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Nasiba To'rayeva",
     muddati: "15.07.2025",
     status: "Yuborilgan",
   },
   {
     mavzu: "Biologiya: O'simliklarning tuzilishi",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Ra`no Yusupova",
     muddati: "21.07.2025",
     status: "Yuborilgan",
   },
   {
     mavzu: "Algebra: Kasrlarni qo'shish",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Dildora Tojiyeva",
     muddati: "27.07.2025",
     status: "Yuborilgan",
   },
   {
     mavzu: "Fizika: Mexanik Harakat",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Feruza Jonibekova",
     muddati: "27.07.2025",
     status: "Yuborilgan",
   },
   {
-    mavzu: "Algebra: Kasrlarni qo'shish",
+    mavzu: "Algebra: Kasrlarni ko'paytirish",
+    savol: "Chiziqli tenglamalar va ularni grafik usulda yeching",
     oqituvchi: "Dildora Tojiyeva",
     muddati: "21.07.2025",
     status: "Yuborilgan",
@@ -68,8 +76,11 @@ const data = [
 ];
 function VazifalarStudent() {
   const { width } = useWindowSize();
+  const [modalTheme, setModalTheme] = useState(null);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (mavzu) => {
+    const item = data.find((d) => d.mavzu === mavzu);
+    setModalTheme(item);
     document.getElementById("vazifa-yuklash-modal").showModal();
   };
 
@@ -212,7 +223,7 @@ function VazifalarStudent() {
                           {d.status}
                         </td>
                         <td
-                          onClick={handleButtonClick}
+                          onClick={() => handleButtonClick(d.mavzu)}
                           className="border cursor-pointer underline text-[#374DBC] font-semibold border-darslar-border text-center"
                         >
                           Ko'rish
@@ -269,7 +280,7 @@ function VazifalarStudent() {
       </section>
       <Modal
         id="vazifa-yuklash-modal"
-        className="absolute rounded-none md:rounded-xl top-[90px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[80%]  max-w-6xl"
+        className="absolute rounded-none md:rounded-xl top-[90px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[85%]  max-w-7xl"
         buttonClass="btn-lg text-red-500 font-semibold text-xl"
       >
         <div className="flex flex-col gap-3 lg:px-5">
@@ -282,11 +293,11 @@ function VazifalarStudent() {
             <FaArrowLeftLong /> Orqaga
           </button>
           <h2 className="text-title font-semibold text-lg sm:text-xl">
-            Algebra-3. 5-topshiriqlar
+            {modalTheme?.mavzu}
           </h2>
           <div className="flex gap-2 md:gap-7 flex-col md:flex-row">
             <p className="text-light-text text-sm sm:text-[16px]">
-              Savol: Chiziqli tenglamalar va ularni grafik usulda yeching
+              Savol: {modalTheme?.savol}
             </p>
             <button className="self-start text-blue-first underline cursor-pointer whitespace-nowrap text-sm md:text-[16px]">
               Manbani yuklab olish

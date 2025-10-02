@@ -20,12 +20,12 @@ const DarslarStudent = memo(function DarslarStudent({
   return (
     <section
       className={cn(
-        `w-full h-full  flex flex-col gap-8 overflow-y-auto`,
+        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent `,
         className
       )}
       {...rest}
     >
-      <div className="filter-section bg-main-bg p-8 md:rounded-xl w-full absolute z-50 top-[90px] left-0 md:static">
+      <div className="filter-section bg-main-bg p-8 md:rounded-xl w-full  z-50 top-[90px] left-0 md:static">
         <div className="flex justify-between items-center gap-3 md:hidden  pe-0">
           <Form method="post" className="w-full">
             <div className="relative w-full">
@@ -129,12 +129,12 @@ const DarslarStudent = memo(function DarslarStudent({
         </Form>
       </div>
 
-      <diiv className="card-section mt-[120px] md:mt-0 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      <diiv className="card-section mx-2 md:mx-0  md:mt-0 grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {darslar?.map((dars) => {
           return (
             <div
               key={dars.id}
-              className="card bg-main-bg overflow-hidden rounded-xl"
+              className="card shadow-md md:shadow-none bg-main-bg overflow-hidden rounded-xl"
             >
               <div className="card-header w-full h-[300px] relative">
                 <img
