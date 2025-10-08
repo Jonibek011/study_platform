@@ -20,19 +20,19 @@ const DarslarStudent = memo(function DarslarStudent({
   return (
     <section
       className={cn(
-        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent md:py-3 `,
+        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent md:py-3 pb-3 `,
         className
       )}
       {...rest}
     >
-      <div className="filter-section bg-main-bg py-5 px-2 md:rounded-xl w-full  z-50 top-[90px] left-0 md:static">
+      <div className="filter-section bg-main-bg py-5 px-2 md:rounded-xl w-full  z-30 top-[90px] left-0 md:static">
         <div className="flex justify-between items-center gap-3 md:hidden  pe-0">
           <Form method="post" className="w-full">
             <div className="relative w-full">
               <input
                 type="search"
                 placeholder="Qidirish"
-                className="input bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
+                className="input border border-lightest-text bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
               />
               <BiSearch className="w-5 h-5 text-light-text absolute right-3 top-1/2 -translate-y-1/2" />
             </div>
