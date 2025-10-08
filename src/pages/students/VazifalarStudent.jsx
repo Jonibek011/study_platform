@@ -308,7 +308,7 @@ function VazifalarStudent() {
           </div>
           <hr className="text-darslar-border mt-3" />
         </div>
-        <div className="modal-content w-full  ">
+        <div className="modal-content w-full pb-5 md:pb-0 ">
           <UploadTask />
           {/* <RejectTask /> */}
           {/* <SuccessTask /> */}
