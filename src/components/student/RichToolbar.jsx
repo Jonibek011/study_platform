@@ -27,7 +27,7 @@ const formats = [
 ];
 function RichToolbar({ value, setValue }) {
   return (
-    <div className="w-full bg-main-bg border border-blue-first rounded-xl overflow-hidden shadow-sm">
+    <div className="w-full bg-main-bg border outline-none overflow-hidden border-blue-500 rounded-xl overflow- shadow-sm">
       <ReactQuill
         theme="snow"
         value={value}
@@ -37,7 +37,7 @@ function RichToolbar({ value, setValue }) {
         modules={modules}
         formats={formats}
         className=" text-title"
-        style={{ height: "200px", borderRadius: "20px" }}
+        style={{ height: "200px", border: "3px", borderRadius: "20px" }}
       />
     </div>
   );

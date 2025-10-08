@@ -26,7 +26,7 @@ function UploadTask() {
         />
         {/* <RejectedFileInput className="h-[300px]" /> */}
       </div>
-      <div className="right-side flex-1 flex flex-col gap-4 ">
+      <div className="right-side flex-1 flex flex-col gap-4  ">
         <h2 className="text-title text-lg font-semibold">Izoh</h2>
         <RichToolbar value={value} setValue={setValue} />
         <div className="flex justify-between items-center lg:items-start xl:items-center gap-5 flex-col sm:flex-row lg:flex-col xl:flex-row">
@@ -36,13 +36,13 @@ function UploadTask() {
           <div className="flex gap-4">
             <button
               onClick={clearFields}
-              className="btn rounded-full text-[16px] px-8 bg-main-bg border-blue-first text-blue-first"
+              className="btn shadow-none rounded-full text-[16px] px-8 bg-main-bg border-blue-500 font-medium text-blue-500"
             >
               Tozalash
             </button>
             <button
               onClick={handleButtonSubmit}
-              className="btn border-none text-[16px] shadow-none text-white px-8 bg-blue-first rounded-full"
+              className="btn border-none text-[16px] shadow-none text-white px-8 bg-blue-500 font-medium rounded-full"
             >
               Yuborish
             </button>

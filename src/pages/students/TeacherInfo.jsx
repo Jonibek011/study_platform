@@ -104,7 +104,7 @@ function TeacherInfo() {
               <h2 className=" text-title font-semibold text-[12px] sm:text-sm">
                 Yutuqlari:{" "}
               </h2>
-              <ul className="list-disc">
+              <ul className="md:list-disc">
                 {teacher.yutuqlari.map((yutuq) => {
                   return (
                     <li className="text-lighter-text text-[12px] sm:text-sm xl:text-[16px] ">
@@ -127,7 +127,7 @@ function TeacherInfo() {
 
       <div className="teacher-lessons-section flex flex-col gap-2 md:gap-4 lg:gap-6">
         <h2 className="text-xl text-title font-bold px-2 md:px-0">Darslari</h2>
-        <div className="w-full h-auto pb-14">
+        <div className="w-full h-auto pb-2">
           <Cards cards={teacher} />
         </div>
       </div>

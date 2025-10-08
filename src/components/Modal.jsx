@@ -6,13 +6,19 @@ const Modal = memo(function Modal({
   className = "",
   buttonClass = "",
   xmark,
+  bgwhite = "#08080871",
   ...rest
 }) {
   return (
-    <div>
+    <div className="bg-white">
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
-      <dialog id={id} className="modal " {...rest}>
+      <dialog
+        id={id}
+        className="modal  "
+        {...rest}
+        style={{ backgroundColor: bgwhite }}
+      >
         <div
           className={cn(
             `modal-box bg-main-bg border border-darslar-border`,

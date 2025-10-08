@@ -80,6 +80,7 @@ function VazifalarStudent() {
 
   const handleButtonClick = (mavzu) => {
     const item = data.find((d) => d.mavzu === mavzu);
+    console.log(item);
     setModalTheme(item);
     document.getElementById("vazifa-yuklash-modal").showModal();
   };
@@ -125,7 +126,7 @@ function VazifalarStudent() {
                 <input
                   type="search"
                   placeholder="Qidirish"
-                  className="input bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
+                  className="input border border-darslar-border bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
                 />
                 <BiSearch className="w-5 h-5 text-light-text absolute right-3 top-1/2 -translate-y-1/2" />
               </div>
@@ -144,7 +145,7 @@ function VazifalarStudent() {
                     <div className="grid grid-cols-1  gap-6  w-full ">
                       <select
                         required
-                        className="select rounded-xl  bg-input-bg  text-lightest-text invalid:text-lightest-text valid:text-title focus:outline-none focus:border-input-border"
+                        className="select border border-lightest-text rounded-xl  bg-input-bg  text-lightest-text invalid:text-lightest-text valid:text-title focus:outline-none focus:border-input-border"
                       >
                         <option value="" disabled selected hidden>
                           Fanni tanlang
@@ -156,7 +157,7 @@ function VazifalarStudent() {
 
                       <input
                         type="date"
-                        className="input bg-input-bg text-lighter-text rounded-xl focus:outline-none focus:ring-0 focus:border-input-border focus:shadow-none"
+                        className="input border border-lightest-text bg-input-bg text-lighter-text rounded-xl focus:outline-none focus:ring-0 focus:border-input-border focus:shadow-none"
                         placeholder="Sanani tanlang"
                       />
 
@@ -238,7 +239,7 @@ function VazifalarStudent() {
         )}
 
         {width <= 800 && (
-          <div className="flex flex-col gap-3 px-2 ">
+          <div className="flex flex-col gap-3 px-2 pb-3 ">
             {data.map((d) => {
               return (
                 <div
@@ -266,7 +267,7 @@ function VazifalarStudent() {
                       {d.status}
                     </p>
                     <button
-                      onClick={handleButtonClick}
+                      onClick={() => handleButtonClick(d.mavzu)}
                       className="underline font-semibold text-[#374DBC]"
                     >
                       Ko'rish
@@ -280,8 +281,10 @@ function VazifalarStudent() {
       </section>
       <Modal
         id="vazifa-yuklash-modal"
-        className="absolute rounded-none md:rounded-xl top-[90px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[85%]  max-w-7xl"
+        className="absolute rounded-none md:rounded-xl top-[89px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[85%]  max-w-7xl"
         buttonClass="btn-lg text-red-500 font-semibold text-xl"
+        bgwhite={width < 768 && "transparent"}
+        xmark={width < 768 && true}
       >
         <div className="flex flex-col gap-3 lg:px-5">
           <button
@@ -299,7 +302,7 @@ function VazifalarStudent() {
             <p className="text-light-text text-sm sm:text-[16px]">
               Savol: {modalTheme?.savol}
             </p>
-            <button className="self-start text-blue-first underline cursor-pointer whitespace-nowrap text-sm md:text-[16px]">
+            <button className="self-start text-blue-500 underline cursor-pointer whitespace-nowrap text-sm md:text-[16px]">
               Manbani yuklab olish
             </button>
           </div>

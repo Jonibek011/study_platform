@@ -30,7 +30,7 @@ const Card = memo(function Card({ className = "", card, ...rest }) {
         </div>
       </div>
       <div className="card-body p-5 flex flex-col gap-2 relative">
-        <span className="absolute top-5 right-3 badge lg:badge-sm xl:badge-md px-4 py-4 rounded-full bg-[#D8E7FF] text-blue-first text-[15px] font-semibold">
+        <span className="absolute border-none top-5 right-3 badge lg:badge-sm xl:badge-md px-4 py-4 rounded-full bg-[#D8E7FF] text-blue-first text-[15px] font-semibold">
           Boshlang'ich
         </span>
         <h2 className="text-xl text-title font-bold">{card.title}</h2>
