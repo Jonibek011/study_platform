@@ -80,7 +80,9 @@ const FileInput = memo(function FileInput({
           <p className="text-center text-lighter-text">PDF, DOCs, JPG, PNG</p>
           <button
             onClick={() => inputRef.current.click()}
-            className="btn rounded-full   px-8 btn-sm border-none shadow-sm bg-blue-500 text-white font-medium mt-4 disabled:bg-red-500"
+            className={`h-8 text-sm rounded-full   px-8 btn-sm border-none shadow-sm ${
+              value ? "bg-blue-500 opacity-30" : "bg-blue-500"
+            }  text-white font-medium mt-4 `}
             disabled={value}
           >
             {value ? "Fayl yuklandi" : "Faylni yuklash"}
