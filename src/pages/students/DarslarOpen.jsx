@@ -44,8 +44,8 @@ function DarslarOpen() {
     }
   };
   return (
-    <div className="w-full h-full py-3 overflow-y-auto">
-      <div className="bg-main-bg rounded-lg p-4 flex flex-col xl:flex-row gap-8">
+    <div className="w-full h-full md:py-3 overflow-y-auto">
+      <div className="bg-main-bg md:rounded-lg p-2 md:p-4 flex flex-col xl:flex-row gap-8">
         <div className="dars-mavzulari w-full order-2 xl:order-1 xl:w-[55%] ">
           <h2 className="text-title text-[25px] font-bold">{data[0].title}</h2>
           <p className="text-lg text-lighter-text">
