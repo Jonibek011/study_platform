@@ -177,6 +177,7 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
         className="relative w-full overflow-hidden pb-[56.25%] group  rounded-lg"
       >
         <video
+          controls={width < 768}
           onClick={() => setShowControl((prev) => !prev)}
           ref={videoRef}
           key={selectedVideo} // yangi video bosilganda qayta yuklanadi
@@ -191,152 +192,154 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
         </span>
         {/* ================== ekranga teginish orqali video boshqaruvi ============================================ */}
 
-        <div>
-          <div
-            className={`absolute top-[50%] translate-y-[-50%] left-0 w-full flex gap-14 items-center justify-center transition-all duration-400 ${
-              showControl ? "opacity-100" : "opacity-0"
-            } group-hover:opacity-100`}
-          >
-            <button onClick={backTo}>
-              <IoPlayBack className="w-10 h-10 lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-            </button>
-            <div>
-              {!togglePlay && (
-                <button onClick={pause}>
-                  <RiPauseCircleLine className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-                </button>
-              )}
-              {togglePlay && (
-                <button onClick={play}>
-                  <MdOutlinePlayCircle className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-                </button>
-              )}
+        {width > 768 && (
+          <div>
+            <div
+              className={`absolute top-[50%] translate-y-[-50%] left-0 w-full flex gap-14 items-center justify-center transition-all duration-400 ${
+                showControl ? "opacity-100" : "opacity-0"
+              } group-hover:opacity-100`}
+            >
+              <button onClick={backTo}>
+                <IoPlayBack className="w-10 h-10 lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+              </button>
+              <div>
+                {!togglePlay && (
+                  <button onClick={pause}>
+                    <RiPauseCircleLine className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+                  </button>
+                )}
+                {togglePlay && (
+                  <button onClick={play}>
+                    <MdOutlinePlayCircle className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+                  </button>
+                )}
+              </div>
+              <button onClick={forwardTo}>
+                <IoPlayForward className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
+              </button>
             </div>
-            <button onClick={forwardTo}>
-              <IoPlayForward className="w-10 h-10  lg:w-20 lg:h-20 text-white opacity-20 cursor-pointer" />
-            </button>
-          </div>
 
-          {/* ============= videoni boshqaruvchi buttonlar ====================================== */}
-          <div
-            className={`absolute   translate-y-5 transition-all duration-400 z-10 left-0 bottom-5 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex ${
-              showControl ? "opacity-100" : "opacity-0"
-            } group-hover:opacity-100 flex-col gap-1 lg:gap-3`}
-          >
-            <input
-              type="range"
-              min="0"
-              max={duration}
-              step="0.1"
-              value={currentTime}
-              onChange={handleSeak}
-              className="progress-bar"
-              style={{
-                "--progress": `${(currentTime / duration) * 100}%`,
-                width: "100%",
-              }}
-            />
-            {/* ======================================================== */}
-            <div className="flex justify-between items-center  lg:h-8">
-              <div className="flex gap-2 lg:gap-10 items-center ">
-                <div className="pause-and-speed flex gap-1 md:gap-4">
-                  <button className="cursor-pointer">
-                    <IoPlaySkipBack
-                      className=" w-3 h-3 lg:w-5 lg:h-5 text-white"
-                      onClick={backTo}
+            {/* ============= videoni boshqaruvchi buttonlar ====================================== */}
+            <div
+              className={`absolute   translate-y-5 transition-all duration-400 z-10 left-0 bottom-5 md:bottom-4 w-full px-4 group-hover:translate-y-0 flex ${
+                showControl ? "opacity-100" : "opacity-0"
+              } group-hover:opacity-100 flex-col gap-1 lg:gap-3`}
+            >
+              <input
+                type="range"
+                min="0"
+                max={duration}
+                step="0.1"
+                value={currentTime}
+                onChange={handleSeak}
+                className="progress-bar"
+                style={{
+                  "--progress": `${(currentTime / duration) * 100}%`,
+                  width: "100%",
+                }}
+              />
+              {/* ======================================================== */}
+              <div className="flex justify-between items-center  lg:h-8">
+                <div className="flex gap-2 lg:gap-10 items-center ">
+                  <div className="pause-and-speed flex gap-1 md:gap-4">
+                    <button className="cursor-pointer">
+                      <IoPlaySkipBack
+                        className=" w-3 h-3 lg:w-5 lg:h-5 text-white"
+                        onClick={backTo}
+                      />
+                    </button>
+                    <div className="flex  items-center">
+                      {togglePlay && (
+                        <button onClick={play} className="cursor-pointer">
+                          <FaPlay className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
+                        </button>
+                      )}
+                      {!togglePlay && (
+                        <button onClick={pause} className="cursor-pointer">
+                          <FaPause className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
+                        </button>
+                      )}
+                    </div>
+                    <button className="cursor-pointer" onClick={forwardTo}>
+                      <IoPlaySkipForward className="w-3 h-3 lg:w-5 lg:h-55 text-white" />
+                    </button>
+                  </div>
+                  <div className="soud flex items-center gap-5">
+                    <div className="sound flex justify-center items-center">
+                      {toggleSound && (
+                        <button className="cursor-pointer">
+                          <HiSpeakerWave
+                            onClick={unMute}
+                            className="w-3 h-3  lg:w-5 lg:h-5 text-white"
+                          />
+                        </button>
+                      )}
+                      {!toggleSound && (
+                        <button className="cursor-pointer">
+                          <HiSpeakerXMark
+                            onClick={mute}
+                            className="w-3 h-3  lg:w-5 lg:h-5 text-white"
+                          />
+                        </button>
+                      )}
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.01"
+                      className=" volume-slider "
+                      value={volume}
+                      onChange={handleVolumeChange}
                     />
-                  </button>
-                  <div className="flex  items-center">
-                    {togglePlay && (
-                      <button onClick={play} className="cursor-pointer">
-                        <FaPlay className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
-                      </button>
-                    )}
-                    {!togglePlay && (
-                      <button onClick={pause} className="cursor-pointer">
-                        <FaPause className="w-3 h-3  lg:w-5 lg:h-5 text-white" />
-                      </button>
-                    )}
-                  </div>
-                  <button className="cursor-pointer" onClick={forwardTo}>
-                    <IoPlaySkipForward className="w-3 h-3 lg:w-5 lg:h-55 text-white" />
-                  </button>
-                </div>
-                <div className="soud flex items-center gap-5">
-                  <div className="sound flex justify-center items-center">
-                    {toggleSound && (
-                      <button className="cursor-pointer">
-                        <HiSpeakerWave
-                          onClick={unMute}
-                          className="w-3 h-3  lg:w-5 lg:h-5 text-white"
-                        />
-                      </button>
-                    )}
-                    {!toggleSound && (
-                      <button className="cursor-pointer">
-                        <HiSpeakerXMark
-                          onClick={mute}
-                          className="w-3 h-3  lg:w-5 lg:h-5 text-white"
-                        />
-                      </button>
-                    )}
-                  </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    className=" volume-slider "
-                    value={volume}
-                    onChange={handleVolumeChange}
-                  />
 
-                  <div>
-                    <span className="text-[11px] md:text-[14px] text-white">
-                      {videoTime(currentTime)} / {videoTime(time) || ""}
-                      {/* 0:12 / {videoTime(selectedVideo?.videoDuration)} */}
-                    </span>
+                    <div>
+                      <span className="text-[11px] md:text-[14px] text-white">
+                        {videoTime(currentTime)} / {videoTime(time) || ""}
+                        {/* 0:12 / {videoTime(selectedVideo?.videoDuration)} */}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="setting-section flex items-center gap-3">
-                <button
-                  className="text-white cursor-pointer"
-                  onClick={toggleFullscreen}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="icon w-4 h-4  lg:w-6 lg:h-6 icon-tabler icons-tabler-outline icon-tabler-picture-in-picture-on"
+                <div className="setting-section flex items-center gap-3">
+                  <button
+                    className="text-white cursor-pointer"
+                    onClick={toggleFullscreen}
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M11 19h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4" />
-                    <path d="M14 14m0 1a1 1 0 0 1 1 -1h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1z" />
-                    <path d="M7 9l4 4" />
-                    <path d="M8 13h3v-3" />
-                  </svg>
-                </button>
-                <button className="text-white">
-                  <IoIosSettings className="w-4 h-4 lg:w-6 lg:h-6" />
-                </button>
-                <button
-                  className="text-white cursor-pointer"
-                  onClick={toggleFullscreen}
-                >
-                  <FaExpand className="w-3 h-3 lg:w-4 lg:h-4" />
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="icon w-4 h-4  lg:w-6 lg:h-6 icon-tabler icons-tabler-outline icon-tabler-picture-in-picture-on"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M11 19h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4" />
+                      <path d="M14 14m0 1a1 1 0 0 1 1 -1h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1z" />
+                      <path d="M7 9l4 4" />
+                      <path d="M8 13h3v-3" />
+                    </svg>
+                  </button>
+                  <button className="text-white">
+                    <IoIosSettings className="w-4 h-4 lg:w-6 lg:h-6" />
+                  </button>
+                  <button
+                    className="text-white cursor-pointer"
+                    onClick={toggleFullscreen}
+                  >
+                    <FaExpand className="w-3 h-3 lg:w-4 lg:h-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       <div className="flex items-center gap-8 justify-between md:justify-end h-20">
         <div className="flex justify-start  md:gap-8 flex-col md:flex-row">
