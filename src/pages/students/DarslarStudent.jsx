@@ -51,7 +51,7 @@ const DarslarStudent = memo(function DarslarStudent({
                   <div className="grid grid-cols-1  gap-6  w-full ">
                     <select
                       defaultValue="Fanni tanlang"
-                      className="select rounded-xl bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500 "
+                      className="select border border-lightest-text rounded-xl bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500 "
                     >
                       <option disabled={true}>Fanni tanlang</option>
                       <option className="">North America</option>
@@ -61,7 +61,7 @@ const DarslarStudent = memo(function DarslarStudent({
 
                     <select
                       defaultValue="Daraja"
-                      className="select rounded-xl bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500"
+                      className="select rounded-xl border-lightest-text bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500"
                     >
                       <option disabled={true}>Daraja</option>
                       <option className="">North America</option>
@@ -71,7 +71,7 @@ const DarslarStudent = memo(function DarslarStudent({
 
                     <select
                       defaultValue="Holati"
-                      className="select rounded-xl bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500"
+                      className="select rounded-xl border-lightest-text bg-input-bg w-full max-w-auto text-light-text focus:outline-none focus:ring-none focus:border-[3px] focus:border-gray-500"
                     >
                       <option disabled={true}>Holati</option>
                       <option className="">North America</option>
@@ -157,7 +157,7 @@ const DarslarStudent = memo(function DarslarStudent({
                 </div>
               </div>
               <div className="card-body p-5 flex flex-col gap-2 relative">
-                <span className="absolute top-5 right-3 badge lg:badge-sm xl:badge-md px-4 py-4 rounded-full bg-[#D8E7FF] text-blue-first text-[15px] font-semibold">
+                <span className="absolute top-5 right-3 badge lg:badge-sm xl:badge-md px-4 py-4 rounded-full bg-[#D8E7FF] text-blue-first text-[15px] font-semibold border-none">
                   Boshlang'ich
                 </span>
                 <h2 className="text-xl text-title font-bold">{dars.title}</h2>
