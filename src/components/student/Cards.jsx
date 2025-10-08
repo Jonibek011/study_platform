@@ -11,7 +11,7 @@ const Cards = memo(function Cards({ className = "", cards, ...rest }) {
       )}
     >
       {cards?.darslar.map((card) => {
-        return <Card card={card} />;
+        return <Card className="shadow-md" card={card} />;
       })}
     </div>
   );

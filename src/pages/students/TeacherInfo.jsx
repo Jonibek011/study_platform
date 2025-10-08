@@ -18,7 +18,7 @@ function TeacherInfo() {
   const { width } = useWindowSize();
 
   return (
-    <section className="teacher-info-container flex flex-col gap-2 md:gap-4 lg:gap-6 w-full h-full overflow-y-auto ">
+    <section className="teacher-info-container bg-main-bg flex flex-col gap-2 md:gap-4 lg:gap-6 w-full h-full overflow-y-auto ">
       <div className="teacher-info-card relative bg-main-bg rounded-lg p-2 md:p-4 xl:p-8 flex flex-col lg:flex-row gap-2 md:gap-4 xl:gap-8 w-full h-auto">
         <div className="flex justify-between items-center lg:hidden">
           <h2 className="text-xl md:text-2xl text-title font-bold ">
@@ -126,7 +126,9 @@ function TeacherInfo() {
       </div>
 
       <div className="teacher-lessons-section flex flex-col gap-2 md:gap-4 lg:gap-6">
-        <h2 className="text-xl text-title font-bold px-2 md:px-0">Darslari</h2>
+        <h2 className="text-xl text-title font-bold px-2 md:px-0">
+          {width < 640 ? "Dildora Tojiyeva" : "Darslari"}
+        </h2>
         <div className="w-full h-auto pb-2">
           <Cards cards={teacher} />
         </div>

@@ -20,7 +20,7 @@ const DarslarStudent = memo(function DarslarStudent({
   return (
     <section
       className={cn(
-        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent md:py-3 pb-3 `,
+        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-second-bg md:bg-transparent md:py-3 pb-3 `,
         className
       )}
       {...rest}

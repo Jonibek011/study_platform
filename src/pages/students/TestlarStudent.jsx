@@ -203,7 +203,7 @@ function TestlarStudent() {
               <input
                 type="search"
                 placeholder="Qidirish"
-                className="input bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
+                className="input border border-darslar-border bg-input-bg w-full rounded-xl text-title placeholder:italic focus:outline-none focus:ring-0 focus:border-lighter-text "
               />
               <BiSearch className="w-5 h-5 text-light-text absolute right-3 top-1/2 -translate-y-1/2" />
             </div>
