@@ -5,6 +5,7 @@ const Modal = memo(function Modal({
   id,
   className = "",
   buttonClass = "",
+  xmark,
   ...rest
 }) {
   return (
@@ -12,17 +13,24 @@ const Modal = memo(function Modal({
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
       <dialog id={id} className="modal " {...rest}>
-        <div className={cn(`modal-box bg-main-bg`, className)}>
+        <div
+          className={cn(
+            `modal-box bg-main-bg border border-darslar-border`,
+            className
+          )}
+        >
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button
-              className={cn(
-                `hidden md:block btn btn-sm btn-circle btn-ghost absolute right-2 top-2`,
-                buttonClass
-              )}
-            >
-              ✕
-            </button>
+            {!xmark && (
+              <button
+                className={cn(
+                  ` btn btn-sm text-title btn-circle hover:bg-second-bg bg-main-bg border-none hover:border shadow-none absolute right-2 top-2`,
+                  buttonClass
+                )}
+              >
+                ✕
+              </button>
+            )}
           </form>
           {children}
         </div>

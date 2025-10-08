@@ -29,11 +29,6 @@ function TestYaratishStep2() {
   }
 
   //kutish rejimini ko'rsatish uchun delay function
-  const handleDelay = () => {
-    setTimeout(() => {
-      console.log("delay ishladi");
-    }, 1500);
-  };
 
   useEffect(() => {
     const savollar = Number(currentTestPage.savollarSoni);

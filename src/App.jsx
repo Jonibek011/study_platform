@@ -23,6 +23,7 @@ const VazifalarStudent = lazy(() =>
   import("./pages/students/VazifalarStudent")
 );
 const TeacherInfo = lazy(() => import("./pages/students/TeacherInfo"));
+const TestPage = lazy(() => import("./pages/students/TestPage"));
 
 import DarslarOpen from "./pages/students/DarslarOpen";
 
@@ -108,6 +109,14 @@ function App() {
               element: (
                 <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
                   <TestlarStudent />
+                </Suspense>
+              ),
+            },
+            {
+              path: "test-page",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <TestPage />
                 </Suspense>
               ),
             },

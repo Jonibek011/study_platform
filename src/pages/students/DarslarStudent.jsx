@@ -20,12 +20,12 @@ const DarslarStudent = memo(function DarslarStudent({
   return (
     <section
       className={cn(
-        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent `,
+        `w-full h-full  flex flex-col gap-8 overflow-y-auto bg-main-bg md:bg-transparent md:py-3 `,
         className
       )}
       {...rest}
     >
-      <div className="filter-section bg-main-bg p-8 md:rounded-xl w-full  z-50 top-[90px] left-0 md:static">
+      <div className="filter-section bg-main-bg py-5 px-2 md:rounded-xl w-full  z-50 top-[90px] left-0 md:static">
         <div className="flex justify-between items-center gap-3 md:hidden  pe-0">
           <Form method="post" className="w-full">
             <div className="relative w-full">

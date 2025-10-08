@@ -34,8 +34,8 @@ function LoginStep1() {
 
   return (
     <div className="w-full min-h-[100vh] flex justify-center items-center bg-[#D9D9D9] ">
-      <div className="login-card  shadow h-auto w-xs md:w-sm lg:w-md xl:w-lg 2xl:w-xl bg-main-bg rounded-lg p-3 md:p-5 lg:p-8 xl:p-10 flex flex-col gap-5 md:gap-10">
-        <h2 className="text-lg md:text-xl text-title text-center ">Kirish</h2>
+      <div className="login-card  shadow h-auto w-xs md:w-sm lg:w-md xl:w-lg 2xl:w-xl bg-white rounded-lg p-3 md:p-5 lg:p-8 xl:p-10 flex flex-col gap-5 md:gap-10">
+        <h2 className="text-lg md:text-xl text-black text-center ">Kirish</h2>
         <Form
           method="post"
           onSubmit={(e) => {
@@ -45,7 +45,7 @@ function LoginStep1() {
           className="flex flex-col gap-3 md:gap-5 lg:gap-8"
         >
           <div>
-            <p className="text-title font-medium">Telefon raqam</p>
+            <p className="text-black font-medium">Telefon raqam</p>
             <PhoneInput
               country={"uz"} // default Uzbekistan
               preferredCountries={["uz", "us", "gb", "in"]}

@@ -86,7 +86,7 @@ function VazifalarStudent() {
 
   return (
     <>
-      <section className="flex flex-col gap-5 h-full overflow-y-auto">
+      <section className="flex flex-col gap-5 h-full overflow-y-auto md:py-3">
         {width > 800 && (
           <div className=" filter-section max-w-[1000px]  rounded-xl bg-main-bg shadow-sm p-4 flex flex-col gap-3">
             <h2 className="text-title text-lg font-semibold">Filter</h2>
@@ -119,7 +119,7 @@ function VazifalarStudent() {
         )}
 
         {width <= 800 && (
-          <div className="flex justify-between items-center gap-3   pe-0 bg-main-bg md:rounded-xl p-4">
+          <div className="flex justify-between items-center gap-1    bg-main-bg md:rounded-xl py-4 px-2">
             <Form method="post" className="w-full">
               <div className="relative w-full">
                 <input
