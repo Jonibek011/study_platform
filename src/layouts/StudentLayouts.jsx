@@ -11,7 +11,7 @@ function StudentLayouts() {
       <div
         className={`flex w-full ${
           width > 640 && height < 500
-            ? "h-[600px] overflow-y-auto "
+            ? "h-[600px] overflow-y-auto bg-second-bg "
             : "h-[calc(100vh-90px)]"
         } `}
       >
