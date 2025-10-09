@@ -69,7 +69,7 @@ function ChatlarStudent() {
   const handleClickUsers = (name) => {
     const response = data.find((d) => d.name === name);
     const activeIndex = data.findIndex((d) => d.name === response.name);
-    console.log(activeIndex);
+
     setActiveChatIndex(activeIndex);
     setActiveChat(response);
     setShowChat(true);
@@ -200,7 +200,10 @@ function ChatlarStudent() {
             {activeChat && (
               <>
                 <button
-                  onClick={() => setShowChat(false)}
+                  onClick={() => {
+                    setShowChat(false);
+                    setActiveChatIndex(null);
+                  }}
                   className="text-title lg:hidden"
                 >
                   <FaArrowLeft className="w-5 h-5" />
