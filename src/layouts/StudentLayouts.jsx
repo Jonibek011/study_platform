@@ -10,7 +10,9 @@ function StudentLayouts() {
       <Navbar />
       <div
         className={`flex w-full ${
-          width > 640 && height < 500 ? "h-auto" : "h-[calc(100vh-90px)]"
+          width > 640 && height < 500
+            ? "h-[600px] overflow-y-auto "
+            : "h-[calc(100vh-90px)]"
         } `}
       >
         <Sidebar className="z-50" />
