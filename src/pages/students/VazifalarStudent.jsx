@@ -250,12 +250,12 @@ function VazifalarStudent() {
                     <div className="w-7 h-7 rounded-full overflow-hidden">
                       <img src={image} className="h-full" alt="" />
                     </div>
-                    <p className="text-light-text">{d.oqituvchi}</p>
+                    <p className="text-main-text">{d.oqituvchi}</p>
                   </div>
                   <h2 className="text-xl font-semibold text-title">
                     {d.mavzu}
                   </h2>
-                  <p className="text-lighter-text">{d.muddati}</p>
+                  <p className="text-main-text">{d.muddati}</p>
                   <div className="flex justify-between">
                     <p
                       className={`${
@@ -281,7 +281,7 @@ function VazifalarStudent() {
       </section>
       <Modal
         id="vazifa-yuklash-modal"
-        className="absolute rounded-none md:rounded-xl top-[89px] left-0 w-full h-[calc(100vh-90px)] md:h-auto md:static md:w-[85%]  max-w-7xl"
+        className="absolute p-2 md:p-8 rounded-none md:rounded-xl top-[89px] left-0 w-full h-[calc(100dvh-90px)] md:h-auto md:static md:w-[85%]  max-w-7xl"
         buttonClass="btn-lg text-red-500 font-semibold text-xl"
         bgwhite={width < 768 && "transparent"}
         xmark={width < 768 && true}

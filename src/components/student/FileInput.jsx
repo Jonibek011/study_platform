@@ -62,7 +62,7 @@ const FileInput = memo(function FileInput({
         className={cn(
           `${
             dragOverEffect ? "bg-blue-100" : "bg-main-bg "
-          } w-full select-none h-[300px]  border-2 border-dashed border-blue-500 p-5 rounded-xl flex justify-center items-center flex-col focus:outline-none  outline-none`,
+          } w-full select-none md:h-[300px]  border-2 border-dashed border-blue-500 p-5 rounded-xl flex justify-center items-center flex-col focus:outline-none  outline-none`,
           boxClass
         )}
         role="button"
@@ -71,6 +71,7 @@ const FileInput = memo(function FileInput({
         onDragOver={onDragOver}
         onDragLeave={onDragLeave}
         onDrop={onDrop}
+        onClick={() => inputRef.current.click()}
       >
         <span>
           <MdOutlineFileUpload className="w-24 h-24 text-blue-500 " />
@@ -80,7 +81,7 @@ const FileInput = memo(function FileInput({
           <p className="text-center text-lighter-text">PDF, DOCs, JPG, PNG</p>
           <button
             onClick={() => inputRef.current.click()}
-            className={`h-8 text-sm rounded-full   px-8 btn-sm border-none shadow-sm ${
+            className={`h-8 text-sm rounded-full hidden md:block   px-8 btn-sm border-none shadow-sm ${
               value ? "bg-blue-500 opacity-30" : "bg-blue-500"
             }  text-white font-medium mt-4 `}
             disabled={value}

@@ -18,7 +18,7 @@ function UploadTask() {
   };
   return (
     <div className="px-2 md:px-6 py-6 flex flex-col lg:flex-row gap-8 w-full h-full">
-      <div className="left-side w-full lg:w-[40%] h-full min-h-[300px]  ">
+      <div className="left-side w-full lg:w-[40%] h-full md:min-h-[300px]  ">
         <FileInput
           accept="image/*, .pdf, .doc, .docx"
           onFile={setFile}
