@@ -3,9 +3,15 @@ import { Outlet } from "react-router-dom";
 
 import TeacherNavbar from "../components/teacher/TeacherNavbar";
 import TeacherSidebar from "../components/teacher/TeacherSidebar";
+import { useWindowSize } from "../hooks/optimizationHooks/useWindowSize";
 function TeacherLayouts() {
+  const { width, height } = useWindowSize();
   return (
-    <div className="bg-second-bg h-screen w-full">
+    <div
+      className={`bg-second-bg ${
+        width > 640 && height < 600 ? "h-[600px] overflow-y-auto" : "h-screen"
+      }  w-full`}
+    >
       <TeacherNavbar />
       <div className="flex w-full h-[calc(100vh-70px)]">
         <TeacherSidebar className="z-50" />

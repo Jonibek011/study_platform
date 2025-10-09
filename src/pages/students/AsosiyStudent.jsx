@@ -110,7 +110,7 @@ const AsosiyStudent = memo(function AsosiyStudent() {
         <div className="block lg:hidden">
           <CustomNavLink
             to="reyting"
-            className="btn  outline-none border-none shadow-none h-12 bg-white  relative bottom-[-10px] z-0  "
+            className="btn  outline-none border-none shadow-none h-12   relative bottom-[-10px] z-0  "
             active="bg-main-bg text-blue-first"
             notActive="bg-transparent text-title"
           >
