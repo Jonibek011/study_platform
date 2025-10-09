@@ -13,6 +13,7 @@ import { RiPauseCircleLine } from "react-icons/ri";
 import { MdOutlinePlayCircle } from "react-icons/md";
 import { IoPlayBack, IoPlayForward } from "react-icons/io5";
 import { IoStar } from "react-icons/io5";
+import { RiArrowRightSLine } from "react-icons/ri";
 // import video1 from "../../assets/student/darslar/end1YnwyFCht3X9t.mp4";
 import toast from "react-hot-toast";
 
@@ -21,8 +22,13 @@ import { useWindowSize } from "../../hooks/optimizationHooks/useWindowSize";
 
 import { useForm } from "react-hook-form";
 //main function
-const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
-  const { width, height } = useWindowSize();
+const VideoDars = memo(function VideoDars({
+  selectedVideo,
+  onNextLesson,
+  data,
+  setMobileDesign,
+}) {
+  const { width } = useWindowSize();
   const [togglePlay, setTogglePlay] = useState(true);
   const [toggleSound, setToggleSound] = useState(true);
   const [volume, setVolume] = useState(0.5);
@@ -171,7 +177,17 @@ const VideoDars = memo(function VideoDars({ selectedVideo, onNextLesson }) {
 
   return (
     <div className="w-full h-full  ">
-      <h2 className="my-5 p-1 text-xl font-bold text-title">Kirish</h2>
+      <div className="flex items-center gap-3 ">
+        <button
+          onClick={() => setMobileDesign(true)}
+          className="btn w-7 h-7 p-0 bg-main-bg md:hidden border-darslar-border shadow-none text-light-text"
+        >
+          <RiArrowRightSLine className="w-6 h-6" />
+        </button>
+        <h2 className="my-5 p-1 text-xl font-bold text-title">
+          {data[0]?.title}
+        </h2>
+      </div>
       <div
         ref={containerRef}
         className="relative w-full overflow-hidden pb-[56.25%] group  rounded-lg"

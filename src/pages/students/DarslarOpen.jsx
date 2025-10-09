@@ -5,7 +5,7 @@ import CustomNavLink from "../../components/ui/CustomNavLink";
 //icons
 import { IoIosArrowForward } from "react-icons/io";
 import { LiaTelegram } from "react-icons/lia";
-
+import { IoCloseOutline } from "react-icons/io5";
 const VideoDars = lazy(() => import("../../components/student/VideoDars"));
 //component
 import VideoLoading from "../../components/loadings/VideoLoading";
@@ -13,6 +13,7 @@ import VideoLoading from "../../components/loadings/VideoLoading";
 function DarslarOpen() {
   const { id } = useParams();
   const dataId = Number(id);
+  const [mobileDesign, setMobileDesign] = useState(false);
 
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -44,16 +45,29 @@ function DarslarOpen() {
     }
   };
   return (
-    <div className="w-full h-full md:py-3 overflow-y-auto">
+    <div className="w-full h-full md:py-3 overflow-y-auto ">
       <div className="bg-main-bg md:rounded-lg p-2 md:p-4 flex flex-col xl:flex-row gap-8">
-        <div className="dars-mavzulari w-full order-2 xl:order-1 xl:w-[55%] ">
-          <h2 className="text-title text-[25px] font-bold">{data[0].title}</h2>
-          <p className="text-lg text-lighter-text">
+        <div className=" dars-mavzulari w-full order-2 xl:order-1 xl:w-[55%] ">
+          <h2 className="text-title text-[25px] font-bold hidden md:block">
+            {data[0].title}
+          </h2>
+          <p className="text-lg text-lighter-text hidden md:block">
             Siz ushbu kursni{" "}
             <span className="text-[#00A34C]">{data?.[0]?.progress}%</span>{" "}
             tugatdingiz
           </p>
-          <div className="mavzular mt-3 border border-darslar-border rounded-lg w-full py-3  flex flex-col gap-">
+          {/* ========================== darslar qism ================================== */}
+          <div
+            className={`absolute ${
+              !mobileDesign ? "hidden" : "block"
+            }  md:block md:static z-20 top-[90px] bottom-0  left-0 mavzular  bg-main-bg mt-3 md:border border-darslar-border md:rounded-lg w-full py-3  flex flex-col `}
+          >
+            <button
+              onClick={() => setMobileDesign(false)}
+              className="absolute md:hidden top-3 right-3 btn p-0 w-7 h-7 bg-main-bg border-darslar-border shadow-none"
+            >
+              <IoCloseOutline className="w-5 h-5 text-title" />
+            </button>
             <h2 className="font-bold text-title text-xl px-4 border-b border-darslar-border pb-8">
               Kurs tarkibi
             </h2>
@@ -78,7 +92,10 @@ function DarslarOpen() {
                           {videoTime(element?.video?.videoDuration)} min
                         </span>
                         <button
-                          onClick={() => setSelectedVideo(element.video)}
+                          onClick={() => {
+                            setSelectedVideo(element.video);
+                            setMobileDesign(false);
+                          }}
                           className={`${
                             isActive ? "border-none" : "border"
                           } cursor-pointer w-8 rounded-lg border-darslar-border inline-flex justify-center items-center h-8`}
@@ -121,12 +138,14 @@ function DarslarOpen() {
             </div>
           </div>
         </div>
-        <div className="video-section order-1 xl:order-2 w-full h-auto ">
+        <div className="video-section order-1 xl:order-2 w-full h-auto relative z-10 ">
           <Suspense fallback={<VideoLoading />}>
             <VideoDars
               className="w-full "
               selectedVideo={selectedVideo}
               onNextLesson={nextLesson}
+              data={data}
+              setMobileDesign={setMobileDesign}
             />
           </Suspense>
         </div>
