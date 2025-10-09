@@ -104,7 +104,7 @@ function TeacherInfo() {
               <h2 className=" text-title font-semibold text-[12px] sm:text-sm">
                 Yutuqlari:{" "}
               </h2>
-              <ul className="md:list-disc">
+              <ul className="ps-5 list-disc">
                 {teacher.yutuqlari.map((yutuq) => {
                   return (
                     <li className="text-lighter-text text-[12px] sm:text-sm xl:text-[16px] ">

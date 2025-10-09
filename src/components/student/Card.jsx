@@ -23,7 +23,7 @@ const Card = memo(function Card({ className = "", card, ...rest }) {
               className="w-auto h-full rounded-full object-cover"
             />
           </div>
-          <p className="text-lg text-white">{card.teacher}</p>
+          <p className="md:text-lg text-white">{card.teacher}</p>
           <Link>
             <FiExternalLink className="w-6 h-6 text-white" />
           </Link>

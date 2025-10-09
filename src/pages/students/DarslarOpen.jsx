@@ -64,7 +64,7 @@ function DarslarOpen() {
           >
             <button
               onClick={() => setMobileDesign(false)}
-              className="absolute md:hidden top-3 right-3 btn p-0 w-7 h-7 bg-main-bg border-darslar-border shadow-none"
+              className="absolute md:hidden top-3  right-3 btn p-0 w-7 h-7 bg-main-bg border-darslar-border shadow-none"
             >
               <IoCloseOutline className="w-5 h-5 text-title" />
             </button>
@@ -108,7 +108,7 @@ function DarslarOpen() {
                 );
               })}
             </ul>
-            <div className="px-4 mt-3 flex items-center justify-between">
+            <div className="px-4 mt-3 flex items-center justify-between relative z-20 bg-main-bg">
               <div className="flex gap-3 items-center">
                 <div className="profile w-10 h-10 rounded-full overflow-hidden">
                   <img
