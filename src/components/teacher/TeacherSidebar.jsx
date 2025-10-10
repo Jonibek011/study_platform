@@ -41,7 +41,7 @@ const TeacherSidebar = memo(function Sidebar({ className = "", ...rest }) {
         className={cn(
           `w-[70vw]  ${
             width > 640 && height < 600
-              ? "h-[600px] overflow-y-auto"
+              ? "h-full overflow-y-auto"
               : "h-[calc(100vh-70px)]"
           }  md:w-64 bg-main-bg px-5 py-6 absolute z-[999] top-[70px]  md:top-0 ${
             isToggle ? "left-0" : "left-[-100%]"

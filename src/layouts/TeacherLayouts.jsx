@@ -19,7 +19,7 @@ function TeacherLayouts() {
         }`}
       >
         <TeacherSidebar className="z-50" />
-        <main className="w-full h-full  overflow-y-hidden   md:px-5 xl:px-8  xl:pe-10 2xl:pe-[90px]  scroller">
+        <main className="w-full h-full  overflow-y-auto   md:px-5 xl:px-8  xl:pe-10 2xl:pe-[90px]  scroller">
           <Outlet />
         </main>
       </div>
