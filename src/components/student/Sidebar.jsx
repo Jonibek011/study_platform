@@ -113,7 +113,7 @@ const Sidebar = memo(function Sidebar({ className = "", ...rest }) {
         onClick={mobileMenu}
         className={`absolute  ${
           isToggle ? "left-0" : "left-[-100%]"
-        } top-[90px]  w-full h-full z-40  inline-block md:hidden bg-black/60`}
+        } top-[90px]  w-full h-[calc(100vh-90px)] z-40  inline-block md:hidden bg-black/60`}
       ></span>
     </>
   );
