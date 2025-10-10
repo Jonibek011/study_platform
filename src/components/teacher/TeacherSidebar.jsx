@@ -35,7 +35,7 @@ const TeacherSidebar = memo(function Sidebar({ className = "", ...rest }) {
     <>
       <div
         className={cn(
-          `w-[70vw]  md:w-64 h-full bg-main-bg px-5 py-6 absolute z-[999] top-[70px] md:top-0 ${
+          `w-[70vw]  md:w-64 h-[calc(100vh-70px)] bg-main-bg px-5 py-6 absolute z-[999] top-[70px]  md:top-0 ${
             isToggle ? "left-0" : "left-[-100%]"
           } transition-all duration-200 md:static`,
           className
@@ -114,7 +114,7 @@ const TeacherSidebar = memo(function Sidebar({ className = "", ...rest }) {
         onClick={mobileMenu}
         className={`absolute  ${
           isToggle ? "left-0" : "left-[-100%]"
-        } top-[90px]  w-full h-full z-40  inline-block md:hidden bg-black/60`}
+        } top-[70px]  w-full h-[calc(100vh-70px)] z-40  inline-block md:hidden bg-black/60`}
       ></span>
     </>
   );

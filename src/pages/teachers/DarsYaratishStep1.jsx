@@ -68,7 +68,7 @@ function DarsYaratishStep1() {
               <input
                 {...register("darsNomi")}
                 type="text"
-                className="input w-full focus:outline-none bg-input-bg text-title"
+                className="input border border-darslar-border w-full focus:outline-none bg-input-bg text-title"
               />
             </label>
 
@@ -78,7 +78,7 @@ function DarsYaratishStep1() {
               </span>
               <textarea
                 {...register("darsMazmuni")}
-                className="textarea w-full h-20 focus:outline-none bg-input-bg text-title"
+                className="textarea border border-darslar-border w-full h-20 focus:outline-none bg-input-bg text-title"
                 id="textarea"
               ></textarea>
             </label>
@@ -90,7 +90,7 @@ function DarsYaratishStep1() {
               <select
                 {...register("darsDarajasi")}
                 defaultValue="Dars darajasini tanlang"
-                className="select w-full focus:outline-none bg-input-bg text-title default:text-lightest-text"
+                className="select border border-darslar-border w-full focus:outline-none bg-input-bg text-title default:text-lightest-text"
               >
                 <option disabled={true}></option>
                 <option>Boshlang'ich</option>

@@ -120,7 +120,7 @@ export default function FileDrop({
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        className={`rounded-lg p-8 border-2 border-dashed cursor-pointer select-none flex items-center justify-center flex-col transition min-h-[300px]
+        className={`rounded-lg p2 md:p-8 border-2 border-dashed cursor-pointer select-none flex items-center justify-center flex-col transition min-h-[300px]
           ${
             dragActive
               ? "border-blue-400 bg-blue-50"
@@ -150,7 +150,7 @@ export default function FileDrop({
             <div className="rounded-full p-6 mb-4 bg-blue-100">
               <MdUpload className="w-16 h-16 text-[#74A3F0]" />
             </div>
-            <h3 className="font-semibold text-lg text-lighter-text mb-1">
+            <h3 className="font-semibold sm:text-lg text-lighter-text mb-1">
               {title}
             </h3>
             <p className="text-sm text-lightest-text mb-4 text-center px-6">
@@ -162,7 +162,7 @@ export default function FileDrop({
                 e.stopPropagation(); // container onClick ishlamasligi uchun
                 inputRef.current?.click();
               }}
-              className="btn border-none font-normal px-8 h-10 py-2 bg-blue-first text-white rounded-full shadow-sm"
+              className="btn  border-none font-normal px-8 h-8 md:h-10 py-2 bg-blue-first text-white rounded-full shadow-sm"
             >
               Faylni tanlash
             </button>

@@ -43,8 +43,8 @@ const mavjud_darslar = [
 function DarsYaratish() {
   const { width } = useWindowSize();
   return (
-    <section className="flex relative  flex-col gap-5 -mt-4 sm:mt-0 h-full overflow-y-auto ">
-      <div className="dars-yaratish   sm:rounded-xl bg-main-bg p-5 flex justify-between items-center">
+    <section className="flex relative  flex-col gap-1 md:gap-5 -mt-4 sm:mt-0 h-full overflow-y-auto ">
+      <div className="dars-yaratish   sm:rounded-xl bg-main-bg py-5 px-3 flex justify-between items-center">
         <h2 className="text-title text-xl font-semibold">Dars yaratish</h2>
         <Link
           to="step1"
@@ -54,7 +54,7 @@ function DarsYaratish() {
         </Link>
       </div>
       <div
-        className={`mavjud-darslar rounded-xl p-5  bg-main-bg flex  flex-col gap-5 ${
+        className={`mavjud-darslar rounded-xl p-3  bg-second-bg flex  flex-col gap-3 md:gap-5 ${
           width > 1360 && "h-full"
         }`}
       >
