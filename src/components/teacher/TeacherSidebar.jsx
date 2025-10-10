@@ -18,7 +18,11 @@ import { TbCalendarPlus } from "react-icons/tb";
 //costom navlink
 import CustomLink from "../ui/CustomLink";
 import { Link } from "react-router-dom";
+
+//hook
+import { useWindowSize } from "../../hooks/optimizationHooks/useWindowSize";
 const TeacherSidebar = memo(function Sidebar({ className = "", ...rest }) {
+  const { width, height } = useWindowSize();
   //toggle dark mode
 
   const toggleDarkMode = useContextSelector(
@@ -35,7 +39,11 @@ const TeacherSidebar = memo(function Sidebar({ className = "", ...rest }) {
     <>
       <div
         className={cn(
-          `w-[70vw]  md:w-64 h-[calc(100vh-70px)] bg-main-bg px-5 py-6 absolute z-[999] top-[70px]  md:top-0 ${
+          `w-[70vw]  md:w-64 ${
+            width > 640 && height < 600
+              ? "h-[600px] overflow-y-auto"
+              : "h-[calc(100vh-70px)]"
+          }  bg-main-bg px-5 py-6 absolute z-[999] top-[70px]  md:top-0 ${
             isToggle ? "left-0" : "left-[-100%]"
           } transition-all duration-200 md:static`,
           className
