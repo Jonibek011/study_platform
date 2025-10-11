@@ -43,7 +43,7 @@ const mavjud_darslar = [
 function DarsYaratish() {
   const { width } = useWindowSize();
   return (
-    <section className="flex relative  flex-col gap-1 md:gap-5 -mt-4 sm:mt-0 h-full overflow-y-auto ">
+    <section className="flex relative  md:py-5  flex-col gap-1 md:gap-5  sm:mt-0 h-full overflow-y-auto ">
       <div className="dars-yaratish   sm:rounded-xl bg-main-bg py-5 px-3 flex justify-between items-center">
         <h2 className="text-title text-xl font-semibold">Dars yaratish</h2>
         <Link

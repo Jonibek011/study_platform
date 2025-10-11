@@ -14,7 +14,7 @@ function Dashboard() {
   const isDark = useContextSelector(DarkModeContext, (ctx) => ctx.isDark);
 
   return (
-    <section className="w-full h-full overflow-y-auto ">
+    <section className="w-full h-full overflow-y-auto py-2 md:py-5 ">
       <div className="main-container w-full h-full flex flex-col gap-4 xl:gap-6">
         <div className="hello-section col-span-full  w-full bg-gradient-to-r from-blue-first to-blue-second flex flex-col gap-1 p-5 rounded-xl">
           <h2 className="text-white font-bold text-xl md:text-2xl">

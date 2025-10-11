@@ -58,8 +58,8 @@ function DarsYaratishStep2() {
     navigation("/teacher/darslar/step3");
   };
   return (
-    <section className="max-w-[1200px] flex flex-col gap-5 w-full h-full  md:rounded-xl p-3 md:p-8 bg-main-bg ">
-      <div className="steps  w-full h-28 py-4  flex flex-col gap-5">
+    <section className="max-w-[1200px] overflow-y-auto md:overflow-y-hidden md:my-7 flex flex-col gap-5 w-full h-full  md:rounded-xl p-3 md:p-8 bg-main-bg ">
+      <div className="steps  w-full h-40 py-4  flex flex-col gap-5">
         <div className="step-container rounded-full  relative w-[85%]  lg:w-[70%] h-1 md:h-2 ml-2   sm:ml-8 bg-[#DFE5EF] flex justify-between items-center">
           <div className="absolute top-0 left-0 w-[50%] h-full bg-blue-first z-0"></div>
           <span className="span-1 relative z-10 w-7 h-7 md:w-10 md:h-10 rounded-full bg-blue-first text-white flex justify-center items-center text-lg ">
@@ -105,7 +105,7 @@ function DarsYaratishStep2() {
         </div>
       </div>
 
-      <div className="darslar-container overflow-y-auto  flex flex-col gap-4  ">
+      <div className="darslar-container md:overflow-y-auto  flex flex-col gap-4  ">
         {!data && (
           <h2 className="opacity-20 text-title text-3xl text-center h-[50vh] flex justify-center items-center">
             🤷‍♀️ Hozircha videolar qo'shilmadi
@@ -129,7 +129,7 @@ function DarsYaratishStep2() {
                   className="absolute w-6 h-6 top-[50%]  left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 "
                   alt=""
                 />
-                <p className="sm:hidden  lg:hidden md:flex flex-col">
+                <p className="sm:hidden   flex  flex-col  lg:hidden">
                   <span className="text-sm whitespace-nowrap text-lightest-text">
                     Video davomiyligi:
                   </span>
@@ -138,7 +138,7 @@ function DarsYaratishStep2() {
               </div>
               <div className="flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between w-full h-full">
                 <div>
-                  <h2 className="text-lg xl:text-xl font-semibold text-title">
+                  <h2 className="sm:text-lg xl:text-xl font-semibold text-title">
                     {index + 1}. {d.title}
                   </h2>
                   <p className="hidden sm:block md:hidden lg:block">

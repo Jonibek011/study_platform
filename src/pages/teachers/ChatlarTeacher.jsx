@@ -75,14 +75,14 @@ function ChatlarTeacher() {
     setShowChat(true);
   };
   return (
-    <section className="absolute md:static top-[75px] left-0  w-full h-[calc(100vh-75px)] md:h-full bg-main-bg  md:rounded-xl overflow-hidden md:border border-darslar-border flex ">
+    <section className="absolute md:static top-[70px] left-0  w-full h-[calc(100vh-70px)] md:h-[95%] md:my-3 bg-main-bg  md:rounded-xl overflow-hidden md:border border-darslar-border flex ">
       <div
         className={`left-section lg:max-w-[470px] lg:flex  w-full h-full ${
           width < 1024 && !showChat ? "flex" : "hidden"
         } flex-col`}
       >
         <div className="search-section p-5 bg-main-bg border-b border-chat-user-border">
-          <label className="border bg-second-bg border-darslar-border flex items-center h-10 rounded-full px-5">
+          <label className="border bg-second-bg border-[#77BFFF] md:border-darslar-border flex items-center h-10 rounded-full px-5">
             <input
               type="search"
               placeholder="Qidirish"

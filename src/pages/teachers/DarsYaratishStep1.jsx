@@ -17,25 +17,25 @@ function DarsYaratishStep1() {
     navigation("/teacher/darslar/step2");
   };
   return (
-    <div className=" overflow-y-auto h-full  ">
+    <div className=" overflow-y-auto h-full  md:py-8 ">
       <div className="max-w-[1200px] bg-main-bg md:rounded-xl p-8 flex flex-col gap-5">
         <div className="steps  w-full h-28 py-4  flex flex-col gap-5  ">
           <div className="step-container rounded-full  relative w-[85%]  lg:w-[70%] h-2 ml-5 md:ml-10 bg-[#DFE5EF] flex justify-between items-center">
             <div className="absolute top-0 left-0 w-0 h-full bg-blue-first z-0"></div>
             <span className="span-1 relative z-10 w-10 h-10 rounded-full bg-blue-first text-white flex justify-center items-center text-lg ">
-              <span className="absolute -bottom-12 lg:-bottom-8 text-blue-first font-semibold text-sm w-[80px] lg:w-[200px] text-center">
+              <span className="absolute -bottom-12 lg:-bottom-8 text-blue-first font-semibold text-[12px] sm:text-sm w-[80px] lg:w-[200px] text-center">
                 Rasm yuklash
               </span>
               1
             </span>
             <span className="z-10 w-10 relative h-10 rounded-full bg-main-bg text-lightest-text border-2 border-[#DFE5EF] flex justify-center items-center text-lg ">
-              <span className="absolute -bottom-12 lg:-bottom-8  text-lightest-text font-semibold text-sm w-[100px] lg:w-[200px] text-center ">
+              <span className="absolute -bottom-12 lg:-bottom-8  text-lightest-text font-semibold text-[12px] sm:text-sm w-[100px] lg:w-[200px] text-center ">
                 Mavzular qo'shish
               </span>
               2
             </span>
             <span className="z-10 w-10 relative h-10 rounded-full bg-main-bg text-lightest-text border-2 border-[#DFE5EF] flex justify-center items-center text-lg ">
-              <span className="absolute -bottom-12 lg:-bottom-8  text-lightest-text font-semibold text-sm w-[100px] lg:w-[200px] text-center ">
+              <span className="absolute -bottom-12 lg:-bottom-8  text-lightest-text font-semibold text-[12px] sm:text-sm w-[100px] lg:w-[200px] text-center ">
                 Tekshirish va saqlash
               </span>
               3

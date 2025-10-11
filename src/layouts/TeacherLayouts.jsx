@@ -12,14 +12,14 @@ function TeacherLayouts() {
     >
       <TeacherNavbar />
       <div
-        className={`flex w-full ${
-          width > 640 && height < 500
-            ? "h-[600px] overflow-y-auto bg-second-bg "
+        className={`flex w-full   flex-1  ${
+          width > 640 && height < 600
+            ? "h-[600px] overflow-y-auto bg-second-bg"
             : "h-[calc(100vh-70px)]"
-        } `}
+        }`}
       >
         <TeacherSidebar className="z-50" />
-        <main className="w-full h-full overflow-y-hidden  md:px-5 xl:px-8 py-0 xl:pe-10 2xl:pe-[90px]  scroller">
+        <main className="w-full h-full  md:px-5 xl:px-8  xl:pe-10 2xl:pe-[90px]  scroller">
           <Outlet />
         </main>
       </div>

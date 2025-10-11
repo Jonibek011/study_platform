@@ -80,14 +80,13 @@ function TestYaratishStep2() {
   };
 
   return (
-    <section className="w-full h-full xl:h-auto rounded-xl bg-main-bg  overflow-y-auto">
+    <section className="w-full h-full xl:h-auto md:rounded-xl bg-main-bg  overflow-y-auto">
       <div className="flex flex-col xl:flex-row ">
         <div className="p-5 flex-2 xl:border-e xl:border-e-darslar-border order-2 xl:order-1 ">
           <h2 className="text-xl font-semibold text-title">
             {savolRaqami <= Number(currentTestPage.savollarSoni)
               ? `${savolRaqami}-savolni kiriting`
               : "savol kiritish imkoni tugatildi"}
-            -savolni kiriting
           </h2>
           <Form
             ref={formRef}
@@ -129,7 +128,10 @@ function TestYaratishStep2() {
             </div>
             <div className="variyantlar flex flex-col gap-4">
               <h2 className="font-semibold text-title">
-                Variantlarni kiriting (to'g'ri javobni belgilang)
+                Variantlarni kiriting{" "}
+                <span className="text-sm font-medium text-lighter-text">
+                  (to'g'ri javobni belgilang)
+                </span>
               </h2>
               <div className="flex flex-col gap-3">
                 <label
@@ -264,7 +266,7 @@ function TestYaratishStep2() {
               return (
                 <span
                   key={index}
-                  className={`w-10 h-10 rounded-lg cursor-pointer ${
+                  className={`w-6 h-6 sm:w-10 sm:h-10 rounded-md sm:rounded-lg text-sm sm:text-[16px] cursor-pointer ${
                     index < savolRaqami
                       ? "bg-blue-first text-white"
                       : "border border-darslar-border bg-main-bg"

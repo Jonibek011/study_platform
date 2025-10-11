@@ -75,22 +75,22 @@ function TestYaratish() {
     document.getElementById("testYaratish-modal").close();
   };
   return (
-    <section className="w-full overflow-y-auto h-full flex flex-col gap-5">
-      <div className="test-yaratish rounded-xl bg-main-bg p-5 flex items-center justify-between">
+    <section className="w-full overflow-y-auto  h-full flex flex-col gap-5">
+      <div className="test-yaratish md:rounded-xl bg-main-bg p-5 flex items-center justify-between">
         <h2 className="text-xl font-semibold text-title">Topshiriq yaratish</h2>
         <div>
           <button
             onClick={() =>
               document.getElementById("yangiTestYaratish-modal").showModal()
             }
-            className="btn border-none whitespace-nowrap shadow-sm rounded-full text-white font-medium px-7 bg-blue-first hover:bg-blue-first"
+            className="btn btn-sm sm:btn-md border-none whitespace-nowrap shadow-sm rounded-full text-white font-medium px-7 bg-blue-first hover:bg-blue-first"
           >
             + Yangi topshiriq yaratish
           </button>
         </div>
       </div>
 
-      <div className="topshiriqlar flex flex-col gap-5">
+      <div className="topshiriqlar flex flex-col gap-5 px-3 md:px-0">
         <h2 className="text-xl text-title font-semibold">
           Mavjud topshiriqlar
         </h2>

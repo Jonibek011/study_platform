@@ -75,32 +75,50 @@ function DarsYaratishStep3() {
 
         <button
           onClick={handleClick}
-          className="btn btn-sm sm:btn-md rounded-full bg-blue-first text-white shadow-sm border-none px-7 font-medium text-lg"
+          className="btn btn-sm sm:btn-md rounded-full bg-blue-first text-white shadow-sm border-none px-7 font-medium text-[15px] md:text-lg"
         >
           Saqlash
         </button>
       </div>
-      <div className="image-card rounded-xl p-5 bg-second-bg flex flex-col lg:flex-row gap-3">
+      <div className="image-card rounded-xl  md:p-5  bg-second-bg flex flex-col lg:flex-row gap-3">
         <div className="image w-full lg:w-[314px]">
-          <img src={image} alt="" className="w-full" />
+          <img
+            src={image}
+            alt=""
+            className="w-full rounded-t-xl md:rounded-xl"
+          />
         </div>
-        <div>
-          <p className="flex gap-4 ">
-            <span className="text-title font-semibold">Dars nomi:</span>{" "}
-            <span className="text-lighter-text">Matematika 1-modul</span>
-          </p>
-          <p className="flex gap-4 ">
-            <span className="text-title font-semibold whitespace-nowrap">
-              Dars tasnifi:
-            </span>{" "}
-            <span className="text-lighter-text">
-              Algebra asoslari va amaliy misollar
-            </span>
-          </p>
-          <p className="flex gap-4 ">
-            <span className="text-title font-semibold">Daraja:</span>{" "}
-            <span className="text-lighter-text">Boshlang'ich</span>
-          </p>
+        <div className="flex gap-4 px-2 md:px-0">
+          <div className="flex flex-col gap-2">
+            <p className="">
+              <span className="text-title font-semibold">Dars nomi:</span>{" "}
+            </p>
+            <p className="">
+              <span className="text-title font-semibold whitespace-nowrap">
+                Dars tasnifi:
+              </span>{" "}
+            </p>
+            <p className="">
+              <span className="text-title font-semibold">Daraja:</span>{" "}
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <p className=" ">
+              <span className="text-lighter-text text-sm md:text-[16px]">
+                Matematika 1-modul
+              </span>
+            </p>
+            <p className="">
+              <span className="text-lighter-text text-sm md:text-[16px]">
+                Algebra asoslari va amaliy misollar
+              </span>
+            </p>
+            <p className=" ">
+              <span className="text-lighter-text text-sm md:text-[16px]">
+                Boshlang'ich
+              </span>
+            </p>
+          </div>
         </div>
       </div>
       <div className="darslar-container   flex flex-col gap-4  ">
