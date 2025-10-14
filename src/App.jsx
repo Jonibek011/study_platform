@@ -54,6 +54,7 @@ import SignUpStep4 from "./pages/register/signup/SignUpStep4";
 // import page not found
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import LoginStep2 from "./pages/register/login/LoginStep2";
+const Setting = lazy(() => import("./pages/settings/Setting"));
 
 //main function
 function App() {
@@ -220,6 +221,14 @@ function App() {
           ],
         },
       ],
+    },
+    {
+      path: "sozlamalar",
+      element: (
+        <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+          <Setting />
+        </Suspense>
+      ),
     },
     {
       path: "/auth/login",

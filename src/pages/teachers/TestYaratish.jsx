@@ -76,7 +76,7 @@ function TestYaratish() {
   };
   return (
     <section className="w-full overflow-y-auto  h-full flex flex-col gap-5">
-      <div className="test-yaratish md:rounded-xl bg-main-bg p-5 flex items-center justify-between">
+      <div className="test-yaratish md:rounded-xl bg-main-bg p-5 flex gap-4 items-center justify-between">
         <h2 className="text-xl font-semibold text-title">Topshiriq yaratish</h2>
         <div>
           <button

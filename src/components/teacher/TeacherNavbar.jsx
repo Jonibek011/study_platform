@@ -120,7 +120,7 @@ const TeacherNavbar = memo(function Navbar({ className = "", ...rest }) {
                 </Link>
               </li>
               <li>
-                <Link className="text-[20px]">
+                <Link to="/sozlamalar" className="text-[20px]">
                   <span>
                     {" "}
                     <IoMdSettings />

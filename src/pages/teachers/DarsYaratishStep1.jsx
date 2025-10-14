@@ -89,7 +89,7 @@ function DarsYaratishStep1() {
               </span>
               <select
                 {...register("darsDarajasi")}
-                defaultValue="Dars darajasini tanlang"
+                defaultValue=""
                 className="select border border-darslar-border w-full focus:outline-none bg-input-bg text-title default:text-lightest-text"
               >
                 <option disabled={true}></option>

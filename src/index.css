@@ -41,6 +41,8 @@
   --color-chat-hover: rgb(235, 235, 235);
   --color-sidebar-hover: rgb(243, 243, 243);
   --color-student-task-status-green: #00a34c;
+  --color-blue-first-setting: #3b82f6;
+  --color-blue-second-setting: #374dbc;
 }
 
 :root {
@@ -70,6 +72,8 @@
   --color-chat-hover: rgb(235, 235, 235);
   --color-sidebar-hover: rgb(243, 243, 243);
   --color-student-task-status-green: #00a34c;
+  --color-blue-first-setting: #3b82f6;
+  --color-blue-second-setting: #374dbc;
 }
 .dark {
   --color-main-bg: #16161d;
@@ -98,6 +102,8 @@
   --color-chat-hover: rgb(41, 41, 41);
   --color-sidebar-hover: rgb(37, 37, 63);
   --color-student-task-status-green: #267c4e;
+  --color-blue-first-setting: #374dbc;
+  --color-blue-second-setting: #1d2e81;
 }
 
 .active {

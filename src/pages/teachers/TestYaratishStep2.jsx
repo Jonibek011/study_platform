@@ -261,12 +261,12 @@ function TestYaratishStep2() {
               </span>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-4">
             {arr.map((savol, index) => {
               return (
                 <span
                   key={index}
-                  className={`w-6 h-6 sm:w-10 sm:h-10 rounded-md sm:rounded-lg text-sm sm:text-[16px] cursor-pointer ${
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-md sm:rounded-lg text-sm sm:text-[16px] cursor-pointer ${
                     index < savolRaqami
                       ? "bg-blue-first text-white"
                       : "border border-darslar-border bg-main-bg"
