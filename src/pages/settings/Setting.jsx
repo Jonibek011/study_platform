@@ -43,16 +43,20 @@ function Setting() {
   return (
     <section
       className={`flex flex-col bg-second-bg w-full h-full  ${
-        width > 640 && height < 600 && "overflow-y-auto h-[600px]"
+        width > 640 && height < 600 ? "overflow-y-auto h-[600px]" : "h-full"
       }`}
     >
       <Navbar />
       <div className="main-section flex">
         <div className="sidebar">
           <div
-            className={`w-[70vw]  md:w-72 h-[calc(100vh-90px)] bg-main-bg px-5 py-6 absolute z-[999] top-[90px] md:top-0 ${
+            className={`w-[70vw]  md:w-72  bg-main-bg px-5 py-6 absolute z-[999] top-[90px] md:top-0 ${
               isToggle ? "left-0" : "left-[-100%]"
-            } transition-all duration-200 md:static`}
+            } transition-all duration-200 md:static ${
+              width > 640 && height < 600
+                ? "overflow-y-auto h-[600px]"
+                : "h-[calc(100vh-90px)]"
+            }`}
           >
             <span
               className="inline-block md:hidden absolute top-3 right-3"
