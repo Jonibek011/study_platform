@@ -48,7 +48,9 @@ function Setting() {
           <div
             className={`w-[70vw]  md:w-72 h-[calc(100vh-90px)] bg-main-bg px-5 py-6 absolute z-[999] top-[90px] md:top-0 ${
               isToggle ? "left-0" : "left-[-100%]"
-            } transition-all duration-200 md:static`}
+            } transition-all duration-200 md:static ${
+              width > 640 && height < 600 && "overflow-y-auto"
+            }`}
           >
             <span
               className="inline-block md:hidden absolute top-3 right-3"
@@ -113,7 +115,7 @@ function Setting() {
             } top-[90px]  w-full h-[calc(100vh-90px)] z-40  inline-block md:hidden bg-black/60`}
           ></span>
         </div>
-        <div className="w-full   bg-second-bg p-4 md:p-5 md:px-5 xl:px-8  xl:pe-10 2xl:pe-[90px] relative flex flex-col gap-6 py-3">
+        <div className="w-full h-[calc(100vh-90px)] md:h-auto   bg-second-bg p-4 md:p-5 md:px-5 xl:px-8  xl:pe-10 2xl:pe-[90px] relative flex flex-col gap-6 py-3">
           {changeDefault && (
             <DefaultMainSetting setChangeDefault={setChangeDefault} />
           )}

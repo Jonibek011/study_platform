@@ -13,7 +13,7 @@ function DefaultChangeSetting({ setChangeDefault }) {
     <div className="w-full bg-second-bg rounded-xl overflow-hidden h-auto  relative overflow-y-auto ">
       <div className="bg-main-bg w-full h-full p-4 flex flex-col gap-4 ">
         <div className="flex gap-8 items-center">
-          <div className="w-28 h-28 text-main-text  rounded-full bg-second-bg border-4 md:border-8 border-main-bg flex justify-center items-center text-4xl ">
+          <div className="min-w-28 min-h-28 w-28 h-28 text-main-text  rounded-full bg-second-bg border-4 md:border-8 border-main-bg flex justify-center items-center text-4xl ">
             AA
           </div>
           <div className="buttons flex flex-col  gap-4">
@@ -71,11 +71,11 @@ function DefaultChangeSetting({ setChangeDefault }) {
             <div className="flex justify-end items-center gap-5">
               <button
                 onClick={() => setChangeDefault(true)}
-                className="btn  border-none shadow-sm rounded-full px-7 bg-[#D9E7FF] text-blue-500 text-[15px] "
+                className="btn  border-none shadow-sm rounded-full px-7 bg-[#0061FF14] text-blue-500 text-[15px] "
               >
                 Bekor qilish
               </button>
-              <button className="btn rounded-full px-7 bg-blue-500 text-white text-[15px] font-medium">
+              <button className="btn rounded-full px-7 bg-blue-first border-none shadow-sm text-white text-[15px] font-medium">
                 {width > 767 ? "O`zgartirishlarni saqlash" : "Saqlash"}
               </button>
             </div>
