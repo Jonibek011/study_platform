@@ -43,6 +43,7 @@
   --color-student-task-status-green: #00a34c;
   --color-blue-first-setting: #3b82f6;
   --color-blue-second-setting: #374dbc;
+  --color-notification-border: #3b82f6;
 }
 
 :root {
@@ -74,6 +75,7 @@
   --color-student-task-status-green: #00a34c;
   --color-blue-first-setting: #3b82f6;
   --color-blue-second-setting: #374dbc;
+  --color-notification-border: #3b82f6;
 }
 .dark {
   --color-main-bg: #16161d;
@@ -104,6 +106,7 @@
   --color-student-task-status-green: #267c4e;
   --color-blue-first-setting: #374dbc;
   --color-blue-second-setting: #1d2e81;
+  --color-notification-border: #394c6b;
 }
 
 .active {
