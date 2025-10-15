@@ -54,7 +54,7 @@ const TeacherNavbar = memo(function Navbar({ className = "", ...rest }) {
           </Form>
         </div> */}
         <div className="navbar-end flex-1 flex justify-end items-center gap-5">
-          <Link to="sozlamalar" className="notificaation">
+          <Link to="bildirishnomalar" className="notificaation">
             <PiBellBold className="w-6 h-6 text-black-gray" />
           </Link>
           <div className="dropdown dropdown-center ">

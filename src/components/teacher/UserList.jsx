@@ -202,7 +202,7 @@ const UserList = memo(function UserList({ className = "", ...rest }) {
           <h2 className="text-xl font-bold lg:text-2xl text-title">
             O'quvchilar ro'yxati
           </h2>
-          <label className="input rounded-xl text-[16px] text-title placeholder:text-lighter-text bg-input-bg  border-input-border">
+          <label className="input rounded-xl border-darslar-border text-[16px] text-title placeholder:text-lighter-text bg-input-bg  ">
             <input
               type="search"
               className="text-title"

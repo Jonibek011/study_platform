@@ -229,6 +229,14 @@ function App() {
                 </Suspense>
               ),
             },
+            {
+              path: "bildirishnomalar",
+              element: (
+                <Suspense fallback={<Loading size="xl" clasName="absolute " />}>
+                  <BildirishnomalarStudent />
+                </Suspense>
+              ),
+            },
           ],
         },
       ],
